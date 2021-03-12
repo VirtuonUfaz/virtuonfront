@@ -1,0 +1,15 @@
+.btn {
+  line-height: 1.25rem;
+  text-align: center;
+  font-weight: 600;
+
+  color: #ffffff;
+  border-radius: 2px;
+  &-primary {
+    font-size: 0.875rem;
+    background: $blue;
+  }
+  &-secondary {
+    font-size: 12px;
+  }
+}

@@ -1,0 +1,68 @@
+//default
+.text {
+  font-size: 14px;
+  line-height: 20px;
+  color: $black;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+//Headers
+.sm-header {
+  font-weight: 600;
+  font-size: 0.875rem; //14px
+  line-height: 20px;
+  letter-spacing: 0.2px;
+
+  color: #252733;
+}
+
+.md-header {
+  font-weight: bold;
+  font-size: 1.5rem; //24px
+  line-height: 32px;
+  color: #22345e;
+}
+
+.xl-header {
+}
+
+//Sizes
+.text-xs {
+  font-size: 0.75rem !important; //12px
+}
+.text-sm {
+  font-size: 0.875rem !important; //14px
+}
+
+.text-md {
+  font-size: 1rem !important; //16px
+}
+
+.text-xl {
+  font-size: 1.5rem !important; //20px
+}
+
+//Add colors Here
+.text-white {
+  color: white;
+}
+
+.text-black {
+  color: $black;
+}
+.text-light-gray {
+  color: $light-gray;
+}
+.text-gray {
+  color: $gray;
+}
+.text-dark-gray {
+  color: $dark-gray;
+}
+
+.text-blue {
+  color: $blue !important;
+}

@@ -1,0 +1,48 @@
+.full-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
+.relative {
+  position: relative;
+}
+
+.absolute {
+  position: absolute;
+}
+
+.fixed {
+  position: fixed;
+}
+
+.hidden {
+  display: none;
+}
+
+.invisible {
+  opacity: 0;
+}
+
+.bg-mid-blue {
+  background: $mid-blue;
+}
+.bg-blue {
+  background: $blue;
+}
+
+.bg-green {
+  background: #27ae60;
+}
+
+.bg-red {
+  background: #eb5757;
+}
+
+.bg-yellow {
+  background: #f2c94c;
+}

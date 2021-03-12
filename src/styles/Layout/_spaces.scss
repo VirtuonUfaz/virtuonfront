@@ -1,0 +1,25 @@
+@each $abbr,
+  $name
+    in (
+      "p": "padding",
+      "px": "padding-inlind",
+      "py": "padding-block",
+      "pt": "padding-top",
+      "pb": "padding-bottom",
+      "pl": "padding-left",
+      "pr": "padding-right",
+      "m": "margin",
+      "mx": "margin-inline",
+      "my": "margin-block",
+      "mt": "margin-top",
+      "mb": "margin-bottom",
+      "ml": "margin-left",
+      "mr": "margin-right"
+    )
+{
+  @for $i from 1 through 8 {
+    .#{$abbr}-#{$i} {
+      #{$name}: 0.25rem * $i !important;
+    }
+  }
+}
