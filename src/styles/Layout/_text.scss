@@ -1,3 +1,14 @@
+@import url("https://fonts.googleapis.com/css2?family=Mulish&display=swap");
+
+@font-face {
+  font-family: "Averta";
+  src: url("../../assets/Fonts/AvertaNormal.otf");
+}
+
+body {
+  font-family: "Averta";
+}
+
 //default
 .text {
   font-size: 14px;
@@ -11,12 +22,10 @@
 
 //Headers
 .sm-header {
-  font-weight: 600;
-  font-size: 0.875rem; //14px
-  line-height: 20px;
-  letter-spacing: 0.2px;
-
-  color: #252733;
+  font-size: 19px;
+  line-height: 23px;
+  letter-spacing: 0.4px;
+  color: #132142;
 }
 
 .md-header {
@@ -33,16 +42,24 @@
 .text-xs {
   font-size: 0.75rem !important; //12px
 }
-.text-sm {
-  font-size: 0.875rem !important; //14px
-}
 
-.text-md {
+.text-sm {
   font-size: 1rem !important; //16px
+}
+.text-md {
+  font-size: 1.25rem !important; //20px
 }
 
 .text-xl {
-  font-size: 1.5rem !important; //20px
+  font-size: 1.5rem !important; //24px
+}
+
+.text-xl {
+  font-size: 2rem !important; //32px
+}
+
+.text-xxl {
+  font-size: 2.5rem !important; //40px
 }
 
 //Add colors Here
@@ -67,6 +84,16 @@
   color: $blue !important;
 }
 
+.text-center {
+  text-align: center;
+}
+.text-left {
+  text-align: left;
+}
 .text-right {
   text-align: right;
+}
+
+.text-secondary-font {
+  font-family: "Mulish", sans-serif;
 }

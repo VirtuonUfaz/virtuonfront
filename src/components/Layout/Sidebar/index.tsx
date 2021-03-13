@@ -1,13 +1,13 @@
 import React from "react";
-import Logo from "assets/Logo.svg";
-import Home from "assets/Home.svg";
-import Campus from "assets/rooms.svg";
-import Timetable from "assets/timetable.svg";
-import Settings from "assets/Settings.svg";
-import Tickets from "assets/tickets.svg";
-import Server from "assets/server.svg";
-import Blogs from "assets/blogs.svg";
-import Members from "assets/members.svg";
+import Logo from "assets/Icons/Logo.svg";
+import Home from "assets/Icons/Home.svg";
+import Campus from "assets/Icons/rooms.svg";
+import Timetable from "assets/Icons/timetable.svg";
+import Settings from "assets/Icons/Settings.svg";
+import Tickets from "assets/Icons/tickets.svg";
+import Server from "assets/Icons/server.svg";
+import Blogs from "assets/Icons/blogs.svg";
+import Members from "assets/Icons/members.svg";
 import "./styles.scss";
 const Sidebar = () => {
   return (

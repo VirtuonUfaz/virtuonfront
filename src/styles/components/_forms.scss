@@ -12,3 +12,35 @@
   box-sizing: border-box;
   border-radius: 2px;
 }
+.custom-checkbox-label {
+  position: relative;
+  cursor: pointer;
+  .custom-checkbox {
+    position: relative;
+    border-radius: 50%;
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    border: 2px solid #c5c7cd;
+  }
+  input[type="checkbox"] {
+    display: none;
+    &:checked {
+      & + .custom-checkbox {
+        background: $blue;
+        &::after {
+          content: "✔";
+          color: white;
+          position: absolute;
+          left: 0px;
+          right: 0;
+          top: 0px;
+          bottom: 0;
+          width: 10px;
+          height: 7px;
+          border-radius: 50%;
+        }
+      }
+    }
+  }
+}
