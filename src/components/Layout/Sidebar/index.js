@@ -16,41 +16,41 @@ const Sidebar = () => {
         <div className="logo">
           <img src={Logo} alt="" />
         </div>
-        <ul className="flex flex-column full-center gap-3 pb-7">
-          <li className="flex-column full-center gap-1">
+        <ul className="flex flex-column full-center  pb-7 w-100">
+          <li className="flex-column full-center gap-1 py-3 w-100">
             <img src={Home} alt="" />
             <p className="nav-text">Home</p>
           </li>
-          <li className="flex-column full-center gap-1">
+          <li className="flex-column full-center gap-1 py-3 w-100">
             <img src={Campus} alt="" />
             <p className="nav-text">Campus</p>
           </li>
-          <li className="flex-column full-center gap-1">
+          <li className="flex-column full-center gap-1 py-3 w-100">
             <img src={Timetable} alt="" />
             <p className="nav-text">Resources</p>
           </li>
-          <li className="flex-column full-center gap-1">
+          <li className="flex-column full-center gap-1 py-3 w-100">
             <img src={Server} alt="" />
             <p className="nav-text">Tasks</p>
           </li>
-          <li className="flex-column full-center gap-1">
+          <li className="flex-column full-center gap-1 py-3 w-100">
             <img src={Members} alt="" />
             <p className="nav-text">Members</p>
           </li>
-          <li className="flex-column full-center gap-1">
+          <li className="flex-column full-center gap-1 py-3 w-100">
             <img src={Blogs} alt="" />
             <p className="nav-text">Blog</p>
           </li>
-          <li className="flex-column full-center gap-1">
+          <li className="flex-column full-center gap-1 py-3 w-100">
             <img src={Server} alt="" />
             <p className="nav-text">Logs</p>
           </li>
-          <li className="flex-column full-center gap-1">
+          <li className="flex-column full-center gap-1 py-3 w-100">
             <img src={Tickets} alt="" />
             <p className="nav-text">Tickets</p>
           </li>
         </ul>
-        <div className="flex-column full-center gap-1">
+        <div className="flex-column full-center gap-1 py-3 w-100">
           <img src={Settings} alt="" />
           <p className="nav-text">Settings</p>
         </div>

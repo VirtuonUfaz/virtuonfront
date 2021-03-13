@@ -10,12 +10,9 @@ function App() {
     <Router>
       <div className="App">
         <React.Suspense fallback={<p>Loading...</p>}>
-          <Switch>
-            <Route exact path="/login" component={Login} />
-          </Switch>
           <Layout>
             <Switch>
-              <Route exact path="/Home" component={Home} />
+              <Route exact path="/" component={Home} />
             </Switch>
           </Layout>
         </React.Suspense>
