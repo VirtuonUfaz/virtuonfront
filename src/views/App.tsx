@@ -1,22 +1,27 @@
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import Home from './Home';
-import Layout from 'components/Layout';
+import React from "react";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import Layout from "components/Layout";
+
+const Home = React.lazy(() => import("./Home"));
+const Login = React.lazy(() => import("./Login"));
 
 function App() {
-  return   (
+  return (
     <Router>
       <div className="App">
-        <Layout>
-        
+        <React.Suspense fallback={<p>Loading...</p>}>
           <Switch>
-            <Route exact path="/">
-              <Home/>
-            </Route>
+            <Route exact path="/login" component={Login} />
           </Switch>
-        </Layout>
+          <Layout>
+            <Switch>
+              <Route exact path="/Home" component={Home} />
+            </Switch>
+          </Layout>
+        </React.Suspense>
       </div>
     </Router>
-  );;
+  );
 }
 
 export default App;

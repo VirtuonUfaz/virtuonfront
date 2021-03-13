@@ -23,3 +23,11 @@
     }
   }
 }
+
+@each $abbr, $name in ("h": "height", "w": "width") {
+  @for $i from 1 through 4 {
+    .#{$abbr}-#{$i*25} {
+      #{$name}: 25% * $i !important;
+    }
+  }
+}
