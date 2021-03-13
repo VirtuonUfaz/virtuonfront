@@ -3,7 +3,6 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Layout from "components/Layout";
 
 const Home = React.lazy(() => import("./Home"));
-const Login = React.lazy(() => import("./Login"));
 
 function App() {
   return (

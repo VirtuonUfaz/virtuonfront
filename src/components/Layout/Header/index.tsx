@@ -1,6 +1,6 @@
 import React from "react";
-import Notifications from "assets/notifications.svg";
-import Logout from "assets/logout.svg";
+import Notifications from "assets/Icons/notifications.svg";
+import Logout from "assets/Icons/logout.svg";
 import "./styles.scss";
 
 const Header = () => {
@@ -32,10 +32,10 @@ const Header = () => {
     today.getMinutes();
 
   return (
-    <nav>
+    <nav className="border-bottom">
       <div className="flex flex-ai-c ">
         <div className="flex-4 flex flex-jc-sb flex-ai-c border-right px-7 py-3">
-          <div className="text text-md bold pl-8">{date}</div>
+          <div className="text text-sm  pl-8">{date}</div>
           <div className="flex ">
             <div className="mr-4">
               <p className="text bold pb-1 text-right">Cody Simmmons</p>
