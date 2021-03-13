@@ -39,7 +39,7 @@ const Home = () => {
             {[1, 2, 3, 4].map((lesson, index) => (
               <div
                 key={index}
-                className="flex flex-jc-sb border-bottom px-8 py-4"
+                className="flex flex-jc-sb border-bottom px-8 py-5"
               >
                 <p className="text">Vector Analysis</p>
                 <p className="text">3</p>
@@ -65,11 +65,8 @@ const Home = () => {
               />
             </div>
             {[1, 2, 3].map((tasks, index) => (
-              <div
-                key={index}
-                className="flex flex-jc-sb border-bottom px-8 py-4"
-              >
-                <div className="flex">
+              <div key={index} className="flex flex-jc-sb border-bottom px-8 ">
+                <div className="flex py-5">
                   <label className="custom-checkbox-label">
                     <input type="checkbox" />
                     <span className="custom-checkbox"></span>
@@ -77,8 +74,10 @@ const Home = () => {
                   <p className=" ml-4 text">Watch lecture of Rabih Amhaz</p>
                 </div>
 
-                <div className="rounded py-1 px-3 bg-red text-white text=sm">
-                  Urgent
+                <div className="py-4">
+                  <div className="rounded py-1 px-3 bg-red text-white text-sm ">
+                    Urgent
+                  </div>
                 </div>
               </div>
             ))}
