@@ -8,9 +8,10 @@ const cards = (props) => {
     
     infos = (
         <div>
-            {props.infos.map(i => {
+            {props.infos.map((i,k) => {
+                console.log(i.time + "  " + i.info)
                 return (
-                    <div>
+                    <div key={k}>
                         <p className="Time">{i.time}</p>
                         <p className="Info">{i.info}</p>  
                     </div>
