@@ -4,6 +4,7 @@ import Layout from "components/Layout";
 
 const Home = lazy(() => import("./Home"));
 const TimeTable = lazy(() => import("./TimeTable"));
+const Rooms = lazy(() => import("./Rooms"));
 
 function App() {
   return (
@@ -14,6 +15,9 @@ function App() {
             <Switch>
               <Route exact path="/" component={Home} />
               <Route exact path="/time-table" component={TimeTable} />
+            </Switch>
+            <Switch>
+              <Route exact path="/Rooms" component={Rooms} />
             </Switch>
           </Layout>
         </React.Suspense>
