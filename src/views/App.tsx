@@ -3,11 +3,11 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Layout from "components/Layout";
 import 'semantic-ui-css/semantic.min.css';
 
-const Home = lazy(() => import("./Home"));
-const TimeTable = lazy(() => import("./TimeTable"));
-const Rooms = lazy(() => import("./Rooms"));
-const RoomsInside = lazy(() => import("./Rooms/RoomsInside/RoomsInside"));
-const RoomsInside = lazy(() => import("./Rooms/RoomsInside/RoomsInside"));
+const Home = React.lazy(() => import("./Home"));
+const Login = React.lazy(() => import("./Login"));
+const Rooms = React.lazy(() => import("./Rooms"));
+const Grades = React.lazy(() => import("./Grades"));
+const RoomsInside = React.lazy(() => import("./Rooms/RoomsInside/RoomsInside"));
 
 function App() {
   return (
@@ -17,6 +17,9 @@ function App() {
           <Layout>
             <Switch>
               <Route exact path="/" component={Home} />
+              <Route exact path="/Rooms" component={Rooms} />
+              <Route exact path="/Grades" component={Grades} />
+              <Route exact path="/RoomsInside" component={RoomsInside} />
               <Route exact path="/time-table" component={TimeTable} />
             </Switch>
             <Switch>
