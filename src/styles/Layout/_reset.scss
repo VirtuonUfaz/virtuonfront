@@ -67,3 +67,7 @@ a {
     color: initial !important;
   }
 }
+
+*:focus {
+  outline: none;
+}

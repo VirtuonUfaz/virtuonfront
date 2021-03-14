@@ -34,28 +34,31 @@
 }
 
 .hidden {
-  display: none;
+  display: none !important;
 }
 
 .invisible {
   opacity: 0;
 }
 
+.bg-light-gray {
+  background: $light-gray !important;
+}
 .bg-mid-blue {
-  background: $mid-blue;
+  background: $mid-blue !important;
 }
 .bg-blue {
-  background: $blue;
+  background: $blue !important;
 }
 
 .bg-green {
-  background: #27ae60;
+  background: #27ae60 !important;
 }
 
 .bg-red {
-  background: #eb5757;
+  background: #eb5757 !important;
 }
 
 .bg-yellow {
-  background: #f2c94c;
+  background: #f2c94c !important;
 }
