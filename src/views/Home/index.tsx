@@ -1,4 +1,4 @@
-import Plus from "assets/Icons/plus.svg";
+import Plus from "../../assets/Icons/plus.svg";
 // import { useState } from "react";
 
 const Home = () => {
