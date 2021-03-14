@@ -1,13 +1,13 @@
 import React, { lazy } from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Layout from "components/Layout";
-import 'semantic-ui-css/semantic.min.css';
+// import "semantic-ui-css/semantic.min.css";
 
-const Home = React.lazy(() => import("./Home"));
-const Login = React.lazy(() => import("./Login"));
-const Rooms = React.lazy(() => import("./Rooms"));
-const Grades = React.lazy(() => import("./Grades"));
-const RoomsInside = React.lazy(() => import("./Rooms/RoomsInside/RoomsInside"));
+const Home = lazy(() => import("./Home"));
+const Rooms = lazy(() => import("./Rooms"));
+const Grades = lazy(() => import("./Grades"));
+const TimeTable = lazy(() => import("./TimeTable"));
+// const RoomsInside = lazy(() => import("./RoomsInside"));
 
 function App() {
   return (
@@ -19,13 +19,9 @@ function App() {
               <Route exact path="/" component={Home} />
               <Route exact path="/Rooms" component={Rooms} />
               <Route exact path="/Grades" component={Grades} />
-              <Route exact path="/RoomsInside" component={RoomsInside} />
+              <Route exact path="/rooms" component={Rooms} />
+              {/* <Route exact path="/roomsInside" component={RoomsInside} /> */}
               <Route exact path="/time-table" component={TimeTable} />
-            </Switch>
-            <Switch>
-              <Route exact path="/Rooms" component={Rooms} />
-              <Route exact path="/Grades" component={Grades} />
-              <Route exact path="/RoomsInside" component={RoomsInside} />
             </Switch>
           </Layout>
         </React.Suspense>

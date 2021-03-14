@@ -20,7 +20,7 @@ const TaskModal = ({ show, setShow, tasks, setTasks }) => {
             </label>
             <input
               type="text"
-              className="form-input"
+              className="form-input form-w-100"
               placeholder="Task"
               value={taskName}
               onChange={(e) => {
@@ -34,7 +34,7 @@ const TaskModal = ({ show, setShow, tasks, setTasks }) => {
             </label>
 
             <select
-              className="form-input"
+              className="form-input form-w-100"
               value={taskType}
               onChange={(e) => {
                 setTaskType(e.target.value);
