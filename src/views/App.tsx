@@ -1,7 +1,6 @@
 import React, { lazy } from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Layout from "components/Layout";
-// import "semantic-ui-css/semantic.min.css";
 
 const Home = lazy(() => import("./Home"));
 const Rooms = lazy(() => import("./Rooms"));
