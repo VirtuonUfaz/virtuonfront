@@ -1,15 +1,14 @@
 import React, { useEffect, useState } from "react";
 import { useForm } from "react-hook-form"
 import "./style.scss"
-
+import 'semantic-ui-css/semantic.min.css'
+import 'bootstrap/dist/css/bootstrap.min.css';
 //image
 import Background from "../../assets/Icons/background.svg";
 import Logo from "../../assets/Icons/Logo.svg";
 
-
 const Login = () => {
   const { register, handleSubmit, errors } = useForm();
-
   const submit = data => {}
 
   return (
