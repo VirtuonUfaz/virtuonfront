@@ -19,6 +19,9 @@
   &-as-s {
     align-self: flex-start;
   }
+  &-wrap {
+    flex-wrap: wrap;
+  }
 }
 
 @each $abbr, $name in ("flex": "flex") {
@@ -30,7 +33,7 @@
 }
 
 @each $abbr, $name in ("gap": "gap") {
-  @for $i from 1 through 8 {
+  @for $i from 1 through 10 {
     .#{$abbr}-#{$i} {
       #{$name}: 0.25rem * $i;
     }

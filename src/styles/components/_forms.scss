@@ -1,3 +1,8 @@
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
 .form-label {
   font-weight: 600;
   font-size: 14px;
@@ -7,11 +12,20 @@
 }
 
 .form-input {
+  padding: 12px 16px;
   background: #ffffff;
   border: 1px solid #e0e0e0;
   box-sizing: border-box;
   border-radius: 2px;
 }
+
+.form-w-50 {
+  min-width: 160px;
+}
+.form-w-100 {
+  min-width: 320px;
+}
+//Checkbox
 .custom-checkbox-label {
   position: relative;
   cursor: pointer;
@@ -43,4 +57,12 @@
       }
     }
   }
+}
+//Selector
+select {
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: 0.2px;
+  color: #22345e;
 }

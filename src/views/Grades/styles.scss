@@ -1,0 +1,18 @@
+.grades {
+  .grade {
+    background-color: #eb5757;
+    padding-right: 15px;
+    padding-bottom: 0px;
+    padding-left: 14px;
+    padding-top: 6px;
+    border-radius: 2px;
+  }
+
+  .gap-100 {
+    gap: 6.25rem;
+  }
+  select {
+    cursor: pointer;
+    width: 220px;
+  }
+}
