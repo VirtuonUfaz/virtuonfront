@@ -1,13 +1,15 @@
-import React from "react";
-import Logo from "../../../assets/Icons/Logo.svg";
-import Home from "../../../assets/Icons/Home.svg";
-import Campus from "../../../assets/Icons/rooms.svg";
-import Timetable from "../../../assets/Icons/timetable.svg";
-import Settings from "../../../assets/Icons/Settings.svg";
-import Tickets from "../../../assets/Icons/tickets.svg";
-import Server from "../../../assets/Icons/server.svg";
-import Blogs from "../../../assets/Icons/blogs.svg";
-import Members from "../../../assets/Icons/members.svg";
+import Logo from "assets/Icons/Logo.svg";
+import Home from "assets/Icons/Home.svg";
+import Campus from "assets/Icons/rooms.svg";
+import Timetable from "assets/Icons/timetable.svg";
+import Settings from "assets/Icons/Settings.svg";
+import Tickets from "assets/Icons/tickets.svg";
+import Server from "assets/Icons/server.svg";
+import Blogs from "assets/Icons/blogs.svg";
+import Members from "assets/Icons/members.svg";
+
+import { NavLink } from "react-router-dom";
+
 import "./styles.scss";
 const Sidebar = () => {
   return (
@@ -17,40 +19,64 @@ const Sidebar = () => {
           <img src={Logo} alt="" />
         </div>
         <ul className="flex flex-column full-center  pb-7 w-100">
-          <li className="flex-column full-center gap-1 py-3 w-100">
+          <NavLink
+            to="/"
+            className="flex-column full-center gap-1 py-3 w-100 cursor-pointer"
+          >
             <img src={Home} alt="" />
             <p className="nav-text">Home</p>
-          </li>
-          <li className="flex-column full-center gap-1 py-3 w-100">
+          </NavLink>
+          <NavLink
+            to="/rooms"
+            className="flex-column full-center gap-1 py-3 w-100 cursor-pointer"
+          >
             <img src={Campus} alt="" />
             <p className="nav-text">Campus</p>
-          </li>
-          <li className="flex-column full-center gap-1 py-3 w-100">
+          </NavLink>
+          <NavLink
+            to="/"
+            className="flex-column full-center gap-1 py-3 w-100 cursor-pointer"
+          >
             <img src={Timetable} alt="" />
             <p className="nav-text">Resources</p>
-          </li>
-          <li className="flex-column full-center gap-1 py-3 w-100">
+          </NavLink>
+          <NavLink
+            to="/"
+            className="flex-column full-center gap-1 py-3 w-100 cursor-pointer"
+          >
             <img src={Server} alt="" />
             <p className="nav-text">Tasks</p>
-          </li>
-          <li className="flex-column full-center gap-1 py-3 w-100">
+          </NavLink>
+          <NavLink
+            to="/"
+            className="flex-column full-center gap-1 py-3 w-100 cursor-pointer"
+          >
             <img src={Members} alt="" />
             <p className="nav-text">Members</p>
-          </li>
-          <li className="flex-column full-center gap-1 py-3 w-100">
+          </NavLink>
+          <NavLink
+            to="/"
+            className="flex-column full-center gap-1 py-3 w-100 cursor-pointer"
+          >
             <img src={Blogs} alt="" />
             <p className="nav-text">Blog</p>
-          </li>
-          <li className="flex-column full-center gap-1 py-3 w-100">
+          </NavLink>
+          <NavLink
+            to="/"
+            className="flex-column full-center gap-1 py-3 w-100 cursor-pointer"
+          >
             <img src={Server} alt="" />
             <p className="nav-text">Logs</p>
-          </li>
-          <li className="flex-column full-center gap-1 py-3 w-100">
+          </NavLink>
+          <NavLink
+            to="/"
+            className="flex-column full-center gap-1 py-3 w-100 cursor-pointer"
+          >
             <img src={Tickets} alt="" />
             <p className="nav-text">Tickets</p>
-          </li>
+          </NavLink>
         </ul>
-        <div className="flex-column full-center gap-1 py-3 w-100">
+        <div className="flex-column full-center gap-1 py-3 w-100 cursor-pointer">
           <img src={Settings} alt="" />
           <p className="nav-text">Settings</p>
         </div>

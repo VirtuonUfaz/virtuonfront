@@ -1,6 +1,6 @@
 import React from "react";
-import Notifications from "../../../assets/Icons/notifications.svg";
-import Logout from "../../../assets/Icons/logout.svg";
+import Notifications from "assets/Icons/notifications.svg";
+import Logout from "assets/Icons/logout.svg";
 import "./styles.scss";
 
 const Header = () => {

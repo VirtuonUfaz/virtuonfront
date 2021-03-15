@@ -82,21 +82,21 @@ const Grades = () => {
           </select>
         </div>
         <div className="flex flex-ai-c">
-          <p className="text bold text-sm text-blue mr-4 ">Semester</p>
-          <select name="" id="" className="text-light-gray form-input ">
-            {yearOptions.map((year, index) => (
-              <option key={index} value={year.value}>
-                {year.text}
-              </option>
-            ))}
-          </select>
-        </div>
-        <div className="flex flex-ai-c">
           <p className="text bold text-sm text-blue mr-4 ">Subject</p>
           <select name="" id="" className="text-light-gray form-input">
             {semesterOptions.map((semesterOptions, index) => (
               <option key={index} value={semesterOptions.value}>
                 {semesterOptions.text}
+              </option>
+            ))}
+          </select>
+        </div>
+        <div className="flex flex-ai-c">
+          <p className="text bold text-sm text-blue mr-4 ">Semester</p>
+          <select name="" id="" className="text-light-gray form-input ">
+            {subjectOptions.map((subject, index) => (
+              <option key={index} value={subject.value}>
+                {subject.text}
               </option>
             ))}
           </select>
