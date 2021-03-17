@@ -1,8 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
+import InformationBox from "../InformationBox";
 
 const Table = () => {
   return (
-    <div className=" rounded">
+    <div className="time-table rounded">
       <div className="flex">
         <div className="flex-1 border text-center py-4">Day</div>
         {[1, 2, 3, 4, 5, 6, 7].map((num, index) => (
@@ -25,8 +26,15 @@ const Table = () => {
           ].map((lesson, index) => (
             <div
               key={index}
-              className={`flex-1 border text-center py-9 bg-${lesson.color} text-white`}
+              className={`lesson-box flex-1 border text-center py-9 bg-${lesson.color} text-white relative`}
             >
+              <InformationBox
+                data={{
+                  room: 406,
+                  teacher: "Rabih Amhaz",
+                  lesson: "Some Computer Stuff",
+                }}
+              />
               {lesson.name}
             </div>
           ))}

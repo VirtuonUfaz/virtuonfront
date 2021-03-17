@@ -9,29 +9,31 @@
     line-height: 16px;
     color: #ffffff;
   }
-  a:hover {
+  .main-ul > a:hover {
     cursor: pointer;
     background: #132142;
     border-left: 2px solid white;
+    > .sub-menue {
+      display: flex !important;
+    }
   }
+
   .active-link {
     background: #132142;
     border-left: 2px solid white;
   }
 
-  &:hover {
-    .sub-menue {
-      display: block !important;
-    }
-  }
   .sub-menue {
     display: none;
+    flex-direction: column;
     width: 168px;
     position: absolute;
     left: 80px;
-    li {
+    > a {
       &:hover {
+        cursor: pointer;
         background-color: #4d5f8a !important;
+        color: white !important;
       }
     }
   }

@@ -1,0 +1,18 @@
+.time-table {
+  .info-box {
+    display: none;
+    position: absolute;
+    background-color: white;
+    height: 100px;
+    width: 200px;
+    z-index: 999;
+  }
+  .lesson-box {
+    cursor: pointer;
+    &:hover {
+      > .info-box {
+        display: block;
+      }
+    }
+  }
+}

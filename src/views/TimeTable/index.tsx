@@ -1,6 +1,6 @@
 import React from "react";
 import Table from "./Table";
-
+import "./styles.scss";
 const Timetable = () => {
   return (
     <div className="py-10">

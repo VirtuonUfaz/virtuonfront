@@ -18,16 +18,22 @@ const Sidebar = () => {
         <div className="logo">
           <img src={Logo} alt="" />
         </div>
-        <ul className="flex flex-column full-center pb-7 w-100 relative">
+        <ul className="main-ul flex flex-column full-center pb-7 w-100 relative">
           <NavLink
             to="/home"
             activeClassName="active-link"
-            className="flex-column full-center gap-1 py-3 w-100 cursor-pointer"
+            className=" flex-column full-center gap-1 py-3 w-100 cursor-pointer"
           >
             <ul className="sub-menue">
-              <li className="p-4 bg-blue text-white text">Rooms</li>
-              <li className="p-4 bg-blue text-white text">Timetable</li>
-              <li className="p-4 bg-blue text-white text">Archive</li>
+              <NavLink to="/rooms" className="p-4 bg-blue text-white text">
+                Rooms
+              </NavLink>
+              <NavLink to="/time-table" className="p-4 bg-blue text-white text">
+                Timetable
+              </NavLink>
+              <NavLink to="/archive" className="p-4 bg-blue text-white text">
+                Archive
+              </NavLink>
             </ul>
             <img src={Home} alt="" />
             <p className="nav-text">Home</p>
@@ -38,9 +44,15 @@ const Sidebar = () => {
             className="flex-column full-center gap-1 py-3 w-100 cursor-pointer"
           >
             <ul className="sub-menue">
-              <li className="p-4 bg-blue text-white text">Absence</li>
-              <li className="p-4 bg-blue text-white text">Grades</li>
-              <li className="p-4 bg-blue text-white text">Documents</li>
+              <NavLink to="/absences" className="p-4 bg-blue text-white text">
+                Absence
+              </NavLink>
+              <NavLink to="/grades" className="p-4 bg-blue text-white text">
+                Grades
+              </NavLink>
+              <NavLink to="/documents" className="p-4 bg-blue text-white text">
+                Documents
+              </NavLink>
             </ul>
             <img src={Campus} alt="" />
             <p className="nav-text">Campus</p>
