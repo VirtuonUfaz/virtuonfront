@@ -18,58 +18,76 @@ const Sidebar = () => {
         <div className="logo">
           <img src={Logo} alt="" />
         </div>
-        <ul className="flex flex-column full-center  pb-7 w-100">
+        <ul className="flex flex-column full-center pb-7 w-100 relative">
           <NavLink
-            to="/"
+            to="/home"
+            activeClassName="active-link"
             className="flex-column full-center gap-1 py-3 w-100 cursor-pointer"
           >
+            <ul className="sub-menue">
+              <li className="p-4 bg-blue text-white text">Rooms</li>
+              <li className="p-4 bg-blue text-white text">Timetable</li>
+              <li className="p-4 bg-blue text-white text">Archive</li>
+            </ul>
             <img src={Home} alt="" />
             <p className="nav-text">Home</p>
           </NavLink>
           <NavLink
             to="/rooms"
+            activeClassName="active-link"
             className="flex-column full-center gap-1 py-3 w-100 cursor-pointer"
           >
+            <ul className="sub-menue">
+              <li className="p-4 bg-blue text-white text">Absence</li>
+              <li className="p-4 bg-blue text-white text">Grades</li>
+              <li className="p-4 bg-blue text-white text">Documents</li>
+            </ul>
             <img src={Campus} alt="" />
             <p className="nav-text">Campus</p>
           </NavLink>
           <NavLink
-            to="/"
+            to="/t"
+            activeClassName="active-link"
             className="flex-column full-center gap-1 py-3 w-100 cursor-pointer"
           >
             <img src={Timetable} alt="" />
             <p className="nav-text">Resources</p>
           </NavLink>
           <NavLink
-            to="/"
+            to="/t"
+            activeClassName="active-link"
             className="flex-column full-center gap-1 py-3 w-100 cursor-pointer"
           >
             <img src={Server} alt="" />
             <p className="nav-text">Tasks</p>
           </NavLink>
           <NavLink
-            to="/"
+            to="/t"
+            activeClassName="active-link"
             className="flex-column full-center gap-1 py-3 w-100 cursor-pointer"
           >
             <img src={Members} alt="" />
             <p className="nav-text">Members</p>
           </NavLink>
           <NavLink
-            to="/"
+            to="/t"
+            activeClassName="active-link"
             className="flex-column full-center gap-1 py-3 w-100 cursor-pointer"
           >
             <img src={Blogs} alt="" />
             <p className="nav-text">Blog</p>
           </NavLink>
           <NavLink
-            to="/"
+            to="/t"
+            activeClassName="active-link"
             className="flex-column full-center gap-1 py-3 w-100 cursor-pointer"
           >
             <img src={Server} alt="" />
             <p className="nav-text">Logs</p>
           </NavLink>
           <NavLink
-            to="/"
+            to="/t"
+            activeClassName="active-link"
             className="flex-column full-center gap-1 py-3 w-100 cursor-pointer"
           >
             <img src={Tickets} alt="" />

@@ -9,9 +9,30 @@
     line-height: 16px;
     color: #ffffff;
   }
-  li:hover {
+  a:hover {
     cursor: pointer;
     background: #132142;
     border-left: 2px solid white;
+  }
+  .active-link {
+    background: #132142;
+    border-left: 2px solid white;
+  }
+
+  &:hover {
+    .sub-menue {
+      display: block !important;
+    }
+  }
+  .sub-menue {
+    display: none;
+    width: 168px;
+    position: absolute;
+    left: 80px;
+    li {
+      &:hover {
+        background-color: #4d5f8a !important;
+      }
+    }
   }
 }

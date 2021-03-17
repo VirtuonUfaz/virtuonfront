@@ -1,5 +1,10 @@
 import React, { lazy } from "react";
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Route,
+  Switch,
+  Redirect,
+} from "react-router-dom";
 import Layout from "components/Layout";
 
 const Home = lazy(() => import("./Home"));
@@ -9,6 +14,9 @@ const TimeTable = lazy(() => import("./TimeTable"));
 const Login = lazy(() => import("./Login"));
 const CreateEvent = lazy(() => import("./Event/CreateEvent"));
 
+const RootRedirect = () => {
+  return <Redirect to={`/home`} />;
+};
 function App() {
   return (
     <Router>
@@ -19,7 +27,8 @@ function App() {
             <Route>
               <Switch>
                 <Layout>
-                  <Route exact path="/" component={Home} />
+                  <Route exact path="/" component={RootRedirect} />
+                  <Route exact path="/Home" component={Home} />
                   <Route exact path="/event/create" component={CreateEvent} />
                   <Route exact path="/Grades" component={Grades} />
                   <Route exact path="/rooms" component={Rooms} />
