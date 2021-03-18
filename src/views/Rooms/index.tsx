@@ -1,15 +1,19 @@
 import React from "react";
 import Cards from "./Cards";
+import { withRouter } from 'react-router-dom'
 
-const rooms = () => {
+
+const rooms = withRouter(({ history }) => {
   let cardList = [
     {
-      room: "102",
-      type: "Staff",
+      room: "303",
+      type: "Classroom",
       color: "green",
       infos: [
-        { time: "15:00-16:00", info: "Break" },
-        { time: "02:00-04:00", info: "Meeting" },
+        { time: "15:00-16:00", info: "Lecture" ,  
+          teacher:"Sevda Mammadova",
+          subject:"Vector Analysis",
+          group:"Adm-017",},
       ],
     },
     {
@@ -17,35 +21,59 @@ const rooms = () => {
       type: "Lab",
       color: "red",
       infos: [
-        { time: "11:00-13:00", info: "UE803" },
-        { time: "09:00-12:00", info: "KASFA" },
+        { time: "11:00-13:00", info: "UE803" , 
+          teacher:"Sevda Mammadova",
+          subject:"Mathematics",
+          group:"Adm-018",},
+          { time: "02:00-04:00", info: "Meeting",      
+          teacher:"Ulviyya Abdulkarimova",
+          subject:"Mathematics",
+          group:"Adm-017", },
       ],
     },
     {
-      room: "103",
+      room: "102",
       type: "Lab",
       color: "red",
       infos: [
-        { time: "11:00-13:00", info: "UE803" },
-        { time: "09:00-12:00", info: "KASFA" },
+        { time: "11:00-13:00", info: "Break"  ,    
+          teacher:"Sevda Mammadova",
+          subject:"Linear Algebra",
+          group:"Adm-019",},
+        { time: "09:00-12:00", info: "Meeting", 
+          teacher:"Sevda Mammadova",
+          subject:"Linear Algebra",
+          group:"Adm-019", },
       ],
     },
     {
-      room: "103",
-      type: "Lab",
+      room: "301",
+      type: "Classroom",
       color: "red",
       infos: [
-        { time: "11:00-13:00", info: "UE803" },
-        { time: "09:00-12:00", info: "KASFA" },
+        { time: "11:00-13:00", info: "UE803",
+          teacher:"Sevda Mammadova",
+          subject:"Data Structures",
+          group:"Std-017", },
+        { time: "09:00-12:00", info: "KASFA",
+          teacher:"Sevda Mammadova",
+          subject:"Data Structures",
+          group:"Std-017", },
       ],
     },
     {
-      room: "103",
+      room: "201",
       type: "Lab",
       color: "yellow",
       infos: [
-        { time: "11:00-13:00", info: "UE803" },
-        { time: "09:00-12:00", info: "KASFA" },
+        { time: "11:00-13:00", info: "UE803" ,
+          teacher:"Sevda Mammadova",
+          subject:"Vector Analysis",
+          group:"IT-018",},
+        { time: "09:00-12:00", info: "KASFA",
+          teacher:"Sevda Mammadova",
+          subject:"Vector Analysis",
+          group:"IT-018", },
       ],
     },
     {
@@ -53,8 +81,14 @@ const rooms = () => {
       type: "Lab",
       color: "red",
       infos: [
-        { time: "11:00-13:00", info: "UE803" },
-        { time: "09:00-12:00", info: "KASFA" },
+        { time: "11:00-13:00", info: "UE803",  
+          teacher:"Sevda Mammadova",
+          subject:"Vector Analysis",
+          group:"Adm-017", },
+        { time: "09:00-12:00", info: "KASFA", 
+          teacher:"Sevda Mammadova",
+          subject:"Vector Analysis",
+          group:"Adm-017", },
       ],
     },
     {
@@ -62,11 +96,29 @@ const rooms = () => {
       type: "Lab",
       color: "green",
       infos: [
-        { time: "11:00-13:00", info: "UE803" },
-        { time: "09:00-12:00", info: "KASFA" },
+        { time: "11:00-13:00", info: "UE803",
+          teacher:"Sevda Mammadova",
+          subject:"Vector Analysis",
+          group:"Adm-017", },
+        { time: "09:00-12:00", info: "KASFA",
+          teacher:"Sevda Mammadova",
+          subject:"Vector Analysis",
+          group:"Adm-017", },
       ],
+
     },
   ];
+
+
+  // const Button = withRouter(({ history }) => (
+  //   <button
+  //     type='button'
+  //     onClick={() => { history.push({pathname:'/roomsinside'}) }}
+  //   >
+  //     Click Me!
+  //   </button>
+  // ))
+
 
   let cards = cardList.map((card, k) => (
     <Cards
@@ -75,6 +127,10 @@ const rooms = () => {
       type={card.type}
       color={card.color}
       infos={card.infos}
+      clicked={() => { history.push({
+        pathname:'/roomsinside',
+        detail:{card}
+      }) }}
     />
   ));
 
@@ -84,6 +140,6 @@ const rooms = () => {
       <div className="flex gap-10 flex-wrap">{cards}</div>
     </div>
   );
-};
+});
 
 export default rooms;

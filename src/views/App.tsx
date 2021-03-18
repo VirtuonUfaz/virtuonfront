@@ -6,7 +6,7 @@ const Home = lazy(() => import("./Home"));
 const Rooms = lazy(() => import("./Rooms"));
 const Grades = lazy(() => import("./Grades"));
 const TimeTable = lazy(() => import("./TimeTable"));
-// const RoomsInside = lazy(() => import("./RoomsInside"));
+const RoomsInside = lazy(() => import("./RoomsInside"));
 
 function App() {
   return (
@@ -16,10 +16,10 @@ function App() {
           <Layout>
             <Switch>
               <Route exact path="/" component={Home} />
-              <Route exact path="/Rooms" component={Rooms} />
-              <Route exact path="/Grades" component={Grades} />
               <Route exact path="/rooms" component={Rooms} />
-              {/* <Route exact path="/roomsInside" component={RoomsInside} /> */}
+              <Route exact path="/grades" component={Grades} />
+              <Route exact path="/rooms" component={Rooms} />
+              <Route exact path="/roomsInside" component={RoomsInside} />
               <Route exact path="/time-table" component={TimeTable} />
             </Switch>
           </Layout>
