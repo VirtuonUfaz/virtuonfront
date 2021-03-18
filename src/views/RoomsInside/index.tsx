@@ -85,7 +85,7 @@ const RoomsInside = (props) => {
         <div className="border rounded flex-1 flex-as-s">
           <div className="bg-vlg pb-5">
             <div className="flex flex-jc-sb mb-2 pt-8 px-8">
-                <div className="sm-header">Vector analysis </div>
+                <div className="sm-header">{location.detail.card.infos[0].subject}</div>
                 <img src={Vector} alt="" className="cursor-pointer" />
             </div>
             <div className="text text-sm text-gray px-8">

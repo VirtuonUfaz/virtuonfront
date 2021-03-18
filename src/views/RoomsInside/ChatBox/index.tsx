@@ -1,9 +1,16 @@
-import react from "react"
+import react, {Component} from "react"
 import Plus from "assets/Icons/circled_plus.svg";
 import Send from "assets/Icons/send.svg";
 import "./style.scss"
 
-const ChatBox = (props) => {
+class ChatBox extends Component {
+
+  constructor(props) {
+    super(props);
+    this.state = {chat: []};
+  }
+
+  render(){
     return (
         <div>
           <div className="flex flex-column mt-9 chatbox">
@@ -31,6 +38,7 @@ const ChatBox = (props) => {
           </div>
         </div>
     )
+  }
 };
 
 export default ChatBox;
