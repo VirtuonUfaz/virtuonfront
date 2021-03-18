@@ -1,2 +1,4 @@
 import { get, post } from "../server";
-export const login = (data) => {};
+export const login = (data) => {
+    
+};
