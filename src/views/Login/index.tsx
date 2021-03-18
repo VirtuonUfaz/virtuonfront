@@ -1,15 +1,66 @@
 import React, { useEffect, useState } from "react";
+
 import { useForm } from "react-hook-form"
+
+// style
 import "./style.scss"
-import 'semantic-ui-css/semantic.min.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
+
 //image
 import Background from "../../assets/Icons/background.svg";
 import Logo from "../../assets/Icons/Logo.svg";
 
 const Login = () => {
   const { register, handleSubmit, errors } = useForm();
+  const [step, setStep] = useState("ID")
   const submit = data => {}
+
+
+  const renderIDInput = () => (
+    <div>
+      <label 
+      className="form-label login-form-label">
+        Please Enter your ID number
+      </label>
+      <input 
+          type="text"  
+          name="id" 
+          placeholder="Your ID number" 
+          style={errors.value && {border: "1px solid #EB5757"}}
+          className={["form-input", errors.value ? "login-form-input-error": "login-form-input"].join().replace(",", " ")}
+          ref={register({
+                    // required: {
+                    //   value: true,
+                    //   message: "An ID number is required, please enter your ID number",
+                    // },
+                  })} />
+      <span className="login-error">{errors.id?.message}</span>
+      <input type="submit"  className="login-button" value="Submit" onClick={() => setStep("OTP")}/>
+    </div>
+  )
+
+   const renderOTPInput = () => (
+    <div>
+      <label 
+      className="form-label login-form-label">
+        Please enter your one-time password from your e-mail
+      </label>
+      <input 
+          type="text"  
+          name="id" 
+          placeholder="******" 
+          style={errors.value && {border: "1px solid #EB5757"}}
+          className={["form-input", errors.value ? "login-form-input-error": "login-form-input"].join().replace(",", " ")}
+          ref={register({
+                    // required: {
+                    //   value: true,
+                    //   message: "An OTP is required, please enter your one-time password",
+                    // },
+                  })} />
+      <span className="login-error">{errors.id?.message}</span>
+      <input type="submit"  className="login-button" value="Log in" />
+    </div>
+  )
 
   return (
     <main className="flex login-container">
@@ -22,26 +73,7 @@ const Login = () => {
        <div className="login-form">
           <h1 className="login-form-title">Login to your Virtual University</h1>
           <form onSubmit={handleSubmit(d => console.log(d))}>
-            <div>
-              <label 
-              className="form-label login-form-label">
-                Please Enter your ID number
-              </label>
-              <input 
-                  type="text"  
-                  name="id" 
-                  placeholder="Your ID number" 
-                  style={errors.value && {border: "1px solid #EB5757"}}
-                  className={["form-input", errors.value ? "login-form-input-error": "login-form-input"].join().replace(",", " ")}
-                  ref={register({
-                            required: {
-                              value: true,
-                              message: "An ID number is required, please enter your ID number",
-                            },
-                          })} />
-              <span className="login-error">{errors.id?.message}</span>
-              <input type="submit"  className="login-button" value="Get Started" />
-            </div>
+            {step === "ID" ? renderIDInput() : renderOTPInput()}
           </form>
       </div>
     </main>

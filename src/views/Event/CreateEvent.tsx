@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from 'react';
-import { Dropdown } from 'semantic-ui-react';
+import { Dropdown, Input } from 'semantic-ui-react';
 import { Row, Col } from 'react-bootstrap'
 import { useForm } from "react-hook-form"
-import DatePicker from "react-datepicker";
 
 // styles
 import "./style.scss";
-import "react-datepicker/dist/react-datepicker.css";
+import 'semantic-ui-css/semantic.min.css'
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 const eventOptions = [
     {
@@ -137,7 +137,7 @@ const CreateEvent = () => {
                     <Col md={6} lg={6} className="mb-4">
                         <div className="form-elem">
                             <label className="form-label">Date</label>
-                            <DatePicker selected={startDate} onChange={date => setStartDate(date)} className="datepicker" />
+                            <Input type="date" />
                         </div>
                     </Col>
                     <Col md={6} lg={6} className="mb-4">
