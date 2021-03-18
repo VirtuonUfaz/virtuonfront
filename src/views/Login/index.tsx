@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from "react";
-
+import React, { useEffect, useState, useContext } from "react";
+import {VirtuonContext} from "../../helpers/context/context"
 import { useForm } from "react-hook-form"
 
 // style
@@ -12,6 +12,7 @@ import Logo from "../../assets/Icons/Logo.svg";
 
 const Login = () => {
   const { register, handleSubmit, errors } = useForm();
+  const {setUser} = useContext(VirtuonContext);
   const [step, setStep] = useState("ID")
   const submit = data => {}
 

@@ -4,11 +4,13 @@ import './styles/styles.scss'
 
 import App from "./views/App";
 import reportWebVitals from "./reportWebVitals";
+import {VirtuonProvider} from "./helpers/context/context";
+
 
 ReactDOM.render(
-  <React.StrictMode>
+  <VirtuonProvider>
     <App />
-  </React.StrictMode>,
+  </VirtuonProvider>,
   document.getElementById("root")
 );
 
