@@ -50,6 +50,7 @@ function App() {
                           />
                           <Route exact path="/grades" component={Grades} />
                           <Route exact path="/archive" component={Archive} />
+                          <Route exact path="/roomsInside" component={RoomsInside} />
                           <Route exact path="/rooms" component={Rooms} />
                           <Route
                             exact
