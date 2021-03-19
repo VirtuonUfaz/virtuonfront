@@ -8,11 +8,13 @@ import {
 import Layout from "components/Layout";
 import {VirtuonContext} from "../helpers/context/context"
 
+import Archive from "./Archive";
 
 const Home = lazy(() => import("./Home"));
 const Rooms = lazy(() => import("./Rooms"));
 const Grades = lazy(() => import("./Grades"));
 const TimeTable = lazy(() => import("./TimeTable"));
+const RoomsInside = lazy(() => import("./RoomsInside"));
 const Login = lazy(() => import("./Login"));
 const CreateEvent = lazy(() => import("./Event/CreateEvent"));
 

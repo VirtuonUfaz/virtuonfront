@@ -1,0 +1,32 @@
+.archive {
+  .react-tabs {
+    &__tab-list {
+      border-bottom: 1px solid #e0e0e0;
+    }
+
+    &__tab {
+      border: none;
+      padding: 15px 25px;
+      font-size: 20px;
+      color: #22345e;
+    }
+
+    &__tab--selected {
+      border-bottom: 4px solid #22345e;
+    }
+  }
+
+  .table-content {
+    > div {
+      flex: 1 1 12.5%;
+      &:nth-child(2) {
+        flex: 1 1 25%;
+      }
+    }
+
+    .image-wrapper {
+      border-radius: 1rem;
+      overflow: hidden;
+    }
+  }
+}
