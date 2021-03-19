@@ -10,6 +10,8 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import Background from "../../assets/Icons/background.svg";
 import Logo from "../../assets/Icons/Logo.svg";
 import { get, post } from "helpers/server";
+import { tokenToString } from "typescript";
+import { fetchUser } from "helpers/actions/auth";
 
 const Login = () => {
   const { register, handleSubmit, errors } = useForm();
@@ -19,15 +21,20 @@ const Login = () => {
   const [OTP, setOTP] = useState<string>("");
 
   const submit = (data): Promise<any> => {
-    console.log(data.id)
+    console.log(data.id);
     if (step === "ID") {
       return post("/auth/check", { ID: ID }, "")
         .then((res) => console.log("res: ", res))
         .catch((err) => console.log("err: ", err));
-    }else if(step === "OTP"){
+    } else if (step === "OTP") {
       return post("/auth/login", { ID: ID, OTP: OTP }, "")
-        .then((res) => console.log("res: ", res))
-        .catch((err) => console.log("err: ", err));
+        .then((res: any) => {
+          localStorage.setItem("token", res?.data?.token);
+          console.log("res: ", res);
+          return fetchUser();
+        })
+        .catch((err) => console.log("err: ", err))
+        .then((user) => setUser(user));
     }
     return Promise.reject();
   };
@@ -40,7 +47,7 @@ const Login = () => {
       <input
         type="text"
         name="id"
-        onChange={val => setID(val.target.value)}
+        onChange={(val) => setID(val.target.value)}
         placeholder="Your ID number"
         style={errors.value && { border: "1px solid #EB5757" }}
         className={[
@@ -74,7 +81,7 @@ const Login = () => {
       <input
         type="text"
         name="otp"
-        onChange={val => setOTP(val.target.value)}
+        onChange={(val) => setOTP(val.target.value)}
         placeholder="******"
         style={errors.value && { border: "1px solid #EB5757" }}
         className={[

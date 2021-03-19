@@ -7,7 +7,7 @@ export const get = (endpoint, data, token) => {
   if (constants.environment === "development") apiUrl = "http://localhost:3000";
 
   return axios
-    .get(`${apiUrl}/${endpoint}`, {
+    .get(`${apiUrl}${endpoint}`, {
       params: data,
       headers: {
         "X-Auth-Token": token,

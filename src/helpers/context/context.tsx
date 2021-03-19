@@ -1,21 +1,29 @@
-import React, { useState, createContext } from "react";
-import {loginHelpers} from "../actions"
-
+import { fetchUser } from "helpers/actions/auth";
+import { get } from "helpers/server";
+import React, { useState, createContext, useEffect } from "react";
+import { loginHelpers } from "../actions";
 
 export const VirtuonContext = createContext({
   user: {},
-  setUser: d => d,
-  loginHelpers: {}
+  setUser: (d) => d,
+  loginHelpers: {},
 });
 
-
-export const VirtuonProvider = props => {
+export const VirtuonProvider = (props) => {
   const [user, setUser] = useState({});
-  
+  useEffect(() => {
+    console.log("FETCHING DATA");
+    fetchUser().then((user) => setUser(user));
+  }, []);
+
   return (
-    <VirtuonContext.Provider value={{
-      user, setUser, loginHelpers
-    }}>
+    <VirtuonContext.Provider
+      value={{
+        user,
+        setUser,
+        loginHelpers,
+      }}
+    >
       {props.children}
     </VirtuonContext.Provider>
   );
