@@ -1,13 +1,36 @@
 import "./styles.scss";
 
 const Grades = () => {
-
   let gradeList = [
-    {course:'Vector analysis', credit:'3', dueDate:'24.04.20', status:'Graded', grade:'13'},
-    {course:'Vector analysis', credit:'5', dueDate:'24.04.20', status:'Graded', grade:'86'},
-    {course:'Vector analysis', credit:'4', dueDate:'14.03.20', status:'Unopened', grade:''},
-    {course:'Vector analysis', credit:'5', dueDate:'25.04.20', status:'Submitted', grade:'54'}
-  ]
+    {
+      course: "Vector analysis",
+      credit: "3",
+      dueDate: "24.04.20",
+      status: "Graded",
+      grade: "13",
+    },
+    {
+      course: "Vector analysis",
+      credit: "5",
+      dueDate: "24.04.20",
+      status: "Graded",
+      grade: "86",
+    },
+    {
+      course: "Vector analysis",
+      credit: "4",
+      dueDate: "14.03.20",
+      status: "Unopened",
+      grade: "",
+    },
+    {
+      course: "Vector analysis",
+      credit: "5",
+      dueDate: "25.04.20",
+      status: "Submitted",
+      grade: "54",
+    },
+  ];
 
   const yearOptions = [
     {
@@ -74,11 +97,11 @@ const Grades = () => {
   ];
 
   const getColor = (grade) => {
-    if(grade == '') return "light-gray";
-    else if(grade < 50) return "red";
+    if (grade === "") return "light-gray";
+    else if (grade < 50) return "red";
     else if (grade < 80) return "yellow";
     else return "green";
-  }
+  };
 
   return (
     <div className="py-10 grades">
@@ -114,16 +137,6 @@ const Grades = () => {
             ))}
           </select>
         </div>
-        <div className="flex flex-ai-c">
-          <p className="text bold text-sm text-blue mr-4 ">Semester</p>
-          <select name="" id="" className="text-light-gray form-input ">
-            {subjectOptions.map((subject, index) => (
-              <option key={index} value={subject.value}>
-                {subject.text}
-              </option>
-            ))}
-          </select>
-        </div>
       </div>
 
       <div className="flex gap-8 my-8">
@@ -146,7 +159,13 @@ const Grades = () => {
                 <p className="text">{grades.credit}</p>
                 <p className="text">{grades.dueDate}</p>
                 <p className="text">{grades.status}</p>
-                <p className={`text grade text-white py-1 bg-${getColor(grades.grade)}`}>{grades.grade}/100</p>
+                <p
+                  className={`text grade text-white py-1 bg-${getColor(
+                    grades.grade
+                  )}`}
+                >
+                  {grades.grade}/100
+                </p>
               </div>
             ))}
           </div>

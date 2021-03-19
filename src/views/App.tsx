@@ -6,6 +6,7 @@ import {
   Redirect,
 } from "react-router-dom";
 import Layout from "components/Layout";
+import Archive from "./Archive";
 
 const Home = lazy(() => import("./Home"));
 const Rooms = lazy(() => import("./Rooms"));
@@ -31,7 +32,8 @@ function App() {
                   <Route exact path="/" component={RootRedirect} />
                   <Route exact path="/Home" component={Home} />
                   <Route exact path="/event/create" component={CreateEvent} />
-                  <Route exact path="/Grades" component={Grades} />
+                  <Route exact path="/grades" component={Grades} />
+                  <Route exact path="/archive" component={Archive} />
                   <Route exact path="/rooms" component={Rooms} />
                   <Route exact path="/roomsInside" component={RoomsInside} />
                   <Route exact path="/time-table" component={TimeTable} />
@@ -39,7 +41,6 @@ function App() {
               </Switch>
             </Route>
           </Switch>
-              
         </React.Suspense>
       </div>
     </Router>
