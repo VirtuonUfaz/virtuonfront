@@ -8,7 +8,6 @@ import {
 import Layout from "components/Layout";
 import { VirtuonContext } from "../helpers/context/context";
 
-
 const Home = lazy(() => import("./Home"));
 const Rooms = lazy(() => import("./Rooms"));
 const Grades = lazy(() => import("./Grades"));
@@ -32,9 +31,7 @@ function App() {
           </Switch>
           <VirtuonContext.Consumer>
             {({ user }) => {
-              console.log(user);
               if (user) {
-                console.log("true");
                 return (
                   <>
                     <Redirect to="/" />
@@ -50,7 +47,11 @@ function App() {
                           />
                           <Route exact path="/grades" component={Grades} />
                           <Route exact path="/archive" component={Archive} />
-                          <Route exact path="/roomsInside" component={RoomsInside} />
+                          <Route
+                            exact
+                            path="/roomsInside"
+                            component={RoomsInside}
+                          />
                           <Route exact path="/rooms" component={Rooms} />
                           <Route
                             exact

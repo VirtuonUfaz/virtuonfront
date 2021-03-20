@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useContext } from "react";
+import { useState, useContext } from "react";
 import { VirtuonContext } from "../../helpers/context/context";
 import { useForm } from "react-hook-form";
 
@@ -9,8 +9,8 @@ import "bootstrap/dist/css/bootstrap.min.css";
 //image
 import Background from "../../assets/Icons/background.svg";
 import Logo from "../../assets/Icons/Logo.svg";
-import { get, post } from "helpers/server";
-import { tokenToString } from "typescript";
+import { post } from "helpers/server";
+// import { tokenToString } from "typescript";
 import { fetchUser } from "helpers/actions/auth";
 
 const Login = () => {

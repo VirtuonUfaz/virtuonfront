@@ -1,6 +1,6 @@
+import { useState, useEffect } from "react";
 import Plus from "assets/Icons/plus.svg";
 import TaskModal from "./TaskModal";
-import { useState } from "react";
 
 const Home = () => {
   const [tasks, setTasks] = useState([
@@ -18,6 +18,10 @@ const Home = () => {
     },
   ]);
   const [showModal, setShowModal] = useState(false);
+
+  // useEffect(() => {
+  //   fetchTasks().then((tasks) => setTasks(tasks));
+  // }, []);
 
   const taskTypeHandler = (key) => {
     switch (key) {
