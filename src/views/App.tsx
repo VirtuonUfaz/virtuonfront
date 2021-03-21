@@ -7,6 +7,7 @@ import {
 } from "react-router-dom";
 import Layout from "components/Layout";
 import { VirtuonContext } from "../helpers/context/context";
+import Loading from "components/Loading";
 
 const Home = lazy(() => import("./Home"));
 const Rooms = lazy(() => import("./Rooms"));
@@ -25,7 +26,7 @@ function App() {
   return (
     <Router>
       <div className="App">
-        <React.Suspense fallback={<p>Loading...</p>}>
+        <React.Suspense fallback={<Loading />}>
           <Switch>
             <Route exact path="/login" component={Login} />
           </Switch>
@@ -34,7 +35,7 @@ function App() {
               if (user) {
                 return (
                   <>
-                    <Redirect to="/" />
+                    <Redirect to="/Home" />
                     <Route>
                       <Switch>
                         <Layout>

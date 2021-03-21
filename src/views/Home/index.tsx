@@ -1,7 +1,6 @@
 import { useState, useEffect } from "react";
 import Plus from "assets/Icons/plus.svg";
 import TaskModal from "./TaskModal";
-
 const Home = () => {
   const [tasks, setTasks] = useState([
     {
