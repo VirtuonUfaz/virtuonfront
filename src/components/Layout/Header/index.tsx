@@ -1,4 +1,6 @@
-import React from "react";
+import { useContext } from "react";
+import { VirtuonContext } from "helpers/context/context";
+import { post } from "helpers/server";
 import Notifications from "assets/Icons/notifications.svg";
 import Logout from "assets/Icons/logout.svg";
 import "./styles.scss";
@@ -31,6 +33,17 @@ const Header = () => {
     ":" +
     today.getMinutes();
 
+  const { setUser } = useContext(VirtuonContext);
+  const logoutHandler = () => {
+    return post("/auth/logout", null, "")
+      .then((res) => console.log("res: ", res))
+      .then(() => {
+        setUser(null);
+        localStorage.removeItem("token");
+      })
+      .catch((err) => console.log("err: ", err));
+  };
+
   return (
     <nav className="border-bottom">
       <div className="flex flex-ai-c ">
@@ -50,7 +63,14 @@ const Header = () => {
         </div>
         <div className="flex-1 flex gap-7 px-7 py-5">
           <img src={Notifications} alt="" className="cursor-pointer" />
-          <img src={Logout} alt="" className="cursor-pointer" />
+          <img
+            src={Logout}
+            alt=""
+            className="cursor-pointer"
+            onClick={() => {
+              logoutHandler();
+            }}
+          />
         </div>
       </div>
     </nav>
