@@ -20,4 +20,12 @@
       padding: 118px 64px;
     }
   }
+
+  .close-btn {
+    position: absolute;
+    right: 0;
+    padding: 20px;
+    font-size: 25px;
+    cursor: pointer;
+  }
 }

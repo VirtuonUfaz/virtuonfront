@@ -10,7 +10,7 @@ const TaskModal = ({ show, setShow, tasks, setTasks }) => {
   };
 
   return (
-    <Modal show={show}>
+    <Modal show={show} setShow={setShow}>
       <h1 className="md-header">Create Task</h1>
       <form className="mt-10">
         <div className="flex flex-jc-sb">
