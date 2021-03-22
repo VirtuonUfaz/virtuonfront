@@ -23,14 +23,15 @@ const RootRedirect = () => {
   return <Redirect to={`/home`} />;
 };
 
+const LoginRedirect = () => {
+  return <Redirect to={`/login`} />;
+};
+
 function App() {
   return (
     <Router>
       <div className="App">
         <React.Suspense fallback={<Loading />}>
-          <Switch>
-            <Route exact path="/login" component={Login} />
-          </Switch>
           <VirtuonContext.Consumer>
             {({ user }) => {
               if (user) {
@@ -65,7 +66,15 @@ function App() {
                     </Route>
                   </>
                 );
-              } else return <Redirect to={`/login`} />;
+              } else;
+              return (
+                <Route>
+                  <Switch>
+                    <Route exact path="/login" component={Login} />
+                    <Route path="/" component={LoginRedirect} />
+                  </Switch>
+                </Route>
+              );
             }}
           </VirtuonContext.Consumer>
         </React.Suspense>

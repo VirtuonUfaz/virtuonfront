@@ -4,7 +4,6 @@ export const login = (data) => {};
 export const fetchUser = () => {
   return get("/auth/user", null, localStorage.getItem("token"))
     .then((res: any) => {
-      console.log("RES DATA: ", res.data);
       if (res.data.status >= 400) return null;
       return res.data;
     })
