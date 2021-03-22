@@ -1,12 +1,18 @@
-import Modal from "components/Modal";
 import { useState } from "react";
+import Modal from "components/Modal";
+import { createTask } from "helpers/actions/tasks";
 
 const TaskModal = ({ show, setShow, tasks, setTasks }) => {
   const [taskName, setTaskName] = useState("");
   const [taskType, setTaskType] = useState("0");
+
   const addTaskHandler = () => {
-    setTasks([{ name: taskName, type: parseInt(taskType) }, ...tasks]);
-    setShow(false);
+    createTask(taskName, null, "normal", null).then((data) => {
+      if (data !== null) {
+        setTasks([{ title: taskName, type: parseInt(taskType) }, ...tasks]);
+        setShow(false);
+      }
+    });
   };
 
   return (

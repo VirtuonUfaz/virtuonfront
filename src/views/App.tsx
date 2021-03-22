@@ -10,6 +10,7 @@ import { VirtuonContext } from "../helpers/context/context";
 import Loading from "components/Loading";
 
 const Home = lazy(() => import("./Home"));
+const Tasks = lazy(() => import("./Tasks"));
 const Rooms = lazy(() => import("./Rooms"));
 const Grades = lazy(() => import("./Grades"));
 const TimeTable = lazy(() => import("./TimeTable"));
@@ -35,7 +36,6 @@ function App() {
               if (user) {
                 return (
                   <>
-                    <Redirect to="/Home" />
                     <Route>
                       <Switch>
                         <Layout>
@@ -47,6 +47,7 @@ function App() {
                             component={CreateEvent}
                           />
                           <Route exact path="/grades" component={Grades} />
+                          <Route exact path="/tasks" component={Tasks} />
                           <Route exact path="/archive" component={Archive} />
                           <Route
                             exact

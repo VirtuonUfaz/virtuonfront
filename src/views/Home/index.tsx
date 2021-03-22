@@ -1,26 +1,25 @@
 import { useState, useEffect } from "react";
+import { fetchTasks, updateTask } from "helpers/actions/tasks";
 import Plus from "assets/Icons/plus.svg";
 import TaskModal from "./TaskModal";
 const Home = () => {
-  const [tasks, setTasks] = useState([
-    {
-      name: "Do Something",
-      type: 0,
-    },
-    {
-      name: "Do else",
-      type: 1,
-    },
-    {
-      name: "Do something else and more",
-      type: 2,
-    },
-  ]);
+  const [tasks, setTasks] = useState([]);
   const [showModal, setShowModal] = useState(false);
 
-  // useEffect(() => {
-  //   fetchTasks().then((tasks) => setTasks(tasks));
-  // }, []);
+  useEffect(() => {
+    fetchTasks().then((data) => {
+      setTasks(data.tasks);
+    });
+  }, []);
+
+  const updateTaskHandler = (id, e) => {
+    updateTask(id, e.target.checked);
+    setTasks(
+      tasks.filter((task: any) =>
+        task.id === id ? (task.is_resolved = e.target.checked) : task
+      )
+    );
+  };
 
   const taskTypeHandler = (key) => {
     switch (key) {
@@ -112,17 +111,23 @@ const Home = () => {
                 onClick={() => setShowModal(true)}
               />
             </div>
-            {tasks.map((task, index) => (
+            {tasks.map((task: any, index) => (
               <div key={index} className="flex flex-jc-sb border-bottom px-8 ">
                 <div className="flex py-5">
                   <label className="custom-checkbox-label">
-                    <input type="checkbox" />
+                    <input
+                      type="checkbox"
+                      checked={task.is_resolved}
+                      onChange={(e) => {
+                        updateTaskHandler(task.id, e);
+                      }}
+                    />
                     <span className="custom-checkbox"></span>
                   </label>
-                  <p className=" ml-4 text">{task.name}</p>
+                  <p className=" ml-4 text">{task.title}</p>
                 </div>
 
-                <div className="py-4">{taskTypeHandler(task.type)}</div>
+                <div className="py-4">{taskTypeHandler(1)}</div>
               </div>
             ))}
           </div>
