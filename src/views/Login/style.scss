@@ -1,81 +1,80 @@
-.login-container{
-    flex-flow: row nowrap;
-    height: 100vh;
+.login-container {
+  flex-flow: row nowrap;
+  height: 100vh;
 }
 
-.login-background{
-    background-color: #22345E;
-    flex-grow: 1;
+.login-background {
+  background-color: #22345e;
+  flex-grow: 1;
 }
 
-.title{
-    display: block;
-    color: #FFFFFF;
-    line-height: 1.5;
-    font-size: 35px;
-    font-weight: bold;
-    margin-top: 5vh;
-    margin-left: 5vw;
-    margin-bottom: 12vh;
+.title {
+  display: block;
+  color: #ffffff;
+  line-height: 1.5;
+  font-size: 35px;
+  font-weight: bold;
+  margin-top: 5vh;
+  margin-left: 5vw;
+  margin-bottom: 12vh;
 }
 
-.login-form{
-    flex-grow: 1;
-    margin-left: 8vw;
-    margin-top: 25vh;
+.login-form {
+  flex-grow: 1;
+  margin-left: 8vw;
+  margin-top: 25vh;
 }
 
-.login-form-title{
-    color: #22345E;
-    font-size: 25px;
-    font-weight: bold;
+.login-form-title {
+  color: #22345e;
+  font-size: 25px;
+  font-weight: bold;
 }
 
-.login-form-label{
-    display: block;
-    margin-bottom: 1vh;
-    color: #1D1D1D;
+.login-form-label {
+  display: block;
+  margin-bottom: 1vh;
+  color: #1d1d1d;
 }
 
-.login-form-input{
-    display: block;
-    padding-left: 1vw;
-    width: 25vw;
-    height: 4vh;
-    border: 1px solid #E0E0E0;
-    border-radius: 2px;
+.login-form-input {
+  display: block;
+  padding-left: 1vw;
+  width: 25vw;
+  height: 4vh;
+  border: 1px solid #e0e0e0;
+  border-radius: 2px;
 }
 
-.login-form-input-error{
-    border: 1px solid #EB5757;
-    display: block;
-    padding-left: 1vw;
-    width: 25vw;
-    height: 3vh;
+.login-form-input-error {
+  border: 1px solid #eb5757;
+  display: block;
+  padding-left: 1vw;
+  width: 25vw;
+  height: 3vh;
 }
 
-.login-error{
-    display: block;
-    color: #EB5757;
-    font-size: 12px;
-    margin-top: 10px;
-    margin-bottom: 5px;
+.login-error {
+  display: block;
+  color: #eb5757;
+  font-size: 12px;
+  margin-top: 10px;
+  margin-bottom: 5px;
 }
 
-.login-form-input::placeholder{
-    color: #BDBDBD;
-    font-size: 14px;
+.login-form-input::placeholder {
+  color: #bdbdbd;
+  font-size: 14px;
 }
 
-.login-button{
-    background-color: #22345E;
-    color: #fff;
-    font-size: 16px;
-    width: 25vw;
-    height: 4vh;
-    margin-top: 1vh;
+.login-button {
+  background-color: #22345e;
+  color: #fff;
+  font-size: 14px;
+  padding-block: 10px;
+  width: 25vw;
 }
 
-form{
-    margin-top: 5vh;
+form {
+  margin-top: 5vh;
 }

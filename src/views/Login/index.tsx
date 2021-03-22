@@ -12,8 +12,10 @@ import Logo from "../../assets/Icons/Logo.svg";
 import { post } from "helpers/server";
 // import { tokenToString } from "typescript";
 import { fetchUser } from "helpers/actions/auth";
+import { useHistory } from "react-router-dom";
 
 const Login = () => {
+  let history = useHistory();
   const { register, handleSubmit, errors } = useForm();
   const { setUser } = useContext(VirtuonContext);
   const [step, setStep] = useState("ID");
@@ -21,20 +23,27 @@ const Login = () => {
   const [OTP, setOTP] = useState<string>("");
 
   const submit = (data): Promise<any> => {
-    console.log(data.id);
     if (step === "ID") {
       return post("/auth/check", { ID: ID }, "")
-        .then((res) => console.log("res: ", res))
+        .then((res: any) => {
+          console.log("res1: ", res);
+          if (res.data.status === 200) setStep("OTP");
+        })
         .catch((err) => console.log("err: ", err));
     } else if (step === "OTP") {
       return post("/auth/login", { ID: ID, OTP: OTP }, "")
         .then((res: any) => {
-          localStorage.setItem("token", res?.data?.token);
           console.log("res: ", res);
-          return fetchUser();
+          if (res.data.status === 200) {
+            localStorage.setItem("token", res?.data?.token);
+            fetchUser()
+              .then((user) => setUser(user))
+              .finally(() => {
+                history.push("/home");
+              });
+          }
         })
-        .catch((err) => console.log("err: ", err))
-        .then((user) => setUser(user));
+        .catch((err) => console.log("err: ", err));
     }
     return Promise.reject();
   };
@@ -57,19 +66,14 @@ const Login = () => {
           .join()
           .replace(",", " ")}
         ref={register({
-          // required: {
-          //   value: true,
-          //   message: "An ID number is required, please enter your ID number",
-          // },
+          required: {
+            value: true,
+            message: "An ID number is required, please enter your ID number",
+          },
         })}
       />
       <span className="login-error">{errors.id?.message}</span>
-      <input
-        type="submit"
-        className="login-button"
-        value="Submit"
-        onClick={() => {}}
-      />
+      <input type="submit" className="login-button" value="Submit" />
     </div>
   );
 
@@ -91,10 +95,10 @@ const Login = () => {
           .join()
           .replace(",", " ")}
         ref={register({
-          // required: {
-          //   value: true,
-          //   message: "An OTP is required, please enter your one-time password",
-          // },
+          minLength: {
+            value: 6,
+            message: "An OTP is required, please enter your one-time password",
+          },
         })}
       />
       <span className="login-error">{errors.id?.message}</span>
@@ -112,11 +116,7 @@ const Login = () => {
       </div>
       <div className="login-form">
         <h1 className="login-form-title">Login to your Virtual University</h1>
-        <form
-          onSubmit={handleSubmit((d) =>
-            submit(d).then(() => step === "ID" && setStep("OTP"))
-          )}
-        >
+        <form onSubmit={handleSubmit((d) => submit(d))}>
           {step === "ID" ? renderIDInput() : renderOTPInput()}
         </form>
       </div>
