@@ -2,14 +2,15 @@ import { useState, useEffect } from "react";
 import { fetchTasks, updateTask } from "helpers/actions/tasks";
 import { NavLink } from "react-router-dom";
 import Plus from "assets/Icons/plus.svg";
+import { DragDropContext, Droppable, Draggable } from "react-beautiful-dnd";
 import TaskModal from "./TaskModal";
 const Home = () => {
-  const [tasks, setTasks] = useState([]);
+  const [tasks, setTasks] = useState<Array<any>>([]);
   const [showModal, setShowModal] = useState(false);
 
   useEffect(() => {
     fetchTasks().then((data) => {
-      setTasks(data.tasks);
+      setTasks(data.tasks.slice(0, 3));
     });
   }, []);
 
@@ -44,6 +45,38 @@ const Home = () => {
         );
     }
   };
+
+  // a little function to help us with reordering the result
+  const reorder = (list, startIndex, endIndex): Array<any> => {
+    const result = Array.from(list);
+    const [removed] = result.splice(startIndex, 1);
+    result.splice(endIndex, 0, removed);
+
+    return result;
+  };
+  const onDragEnd = (result) => {
+    // dropped outside the list
+    if (!result.destination) {
+      return;
+    }
+
+    const items = reorder(tasks, result.source.index, result.destination.index);
+
+    setTasks(items);
+  };
+  const getItemStyle = (isDragging, draggableStyle) => ({
+    // some basic styles to make the items look a bit nicer
+    userSelect: "none",
+    // change background colour if dragging
+    background: isDragging ? "lightgreen" : "white",
+
+    // styles we need to apply on draggables
+    ...draggableStyle,
+  });
+
+  const getListStyle = (isDraggingOver) => ({
+    background: isDraggingOver ? "lightgrey" : "white",
+  });
 
   return (
     <div className="py-10">
@@ -114,25 +147,56 @@ const Home = () => {
                 onClick={() => setShowModal(true)}
               />
             </div>
-            {tasks.map((task: any, index) => (
-              <div key={index} className="flex flex-jc-sb border-bottom px-8 ">
-                <div className="flex py-5">
-                  <label className="custom-checkbox-label">
-                    <input
-                      type="checkbox"
-                      checked={task.is_resolved}
-                      onChange={(e) => {
-                        updateTaskHandler(task.id, e);
-                      }}
-                    />
-                    <span className="custom-checkbox"></span>
-                  </label>
-                  <p className=" ml-4 text">{task.title}</p>
-                </div>
+            <DragDropContext onDragEnd={onDragEnd}>
+              <Droppable droppableId="droppable">
+                {(provided, snapshot) => (
+                  <div
+                    {...provided.droppableProps}
+                    ref={provided.innerRef}
+                    style={getListStyle(snapshot.isDraggingOver)}
+                  >
+                    {tasks.map((task: any, index) => (
+                      <Draggable
+                        key={index}
+                        draggableId={index.toString()}
+                        index={index}
+                      >
+                        {(provided, snapshot) => (
+                          <div
+                            key={index}
+                            className="flex flex-jc-sb border-bottom px-8 "
+                            ref={provided.innerRef}
+                            {...provided.draggableProps}
+                            {...provided.dragHandleProps}
+                            style={getItemStyle(
+                              snapshot.isDragging,
+                              provided.draggableProps.style
+                            )}
+                          >
+                            <div className="flex py-5">
+                              <label className="custom-checkbox-label">
+                                <input
+                                  type="checkbox"
+                                  checked={task.is_resolved}
+                                  onChange={(e) => {
+                                    updateTaskHandler(task.id, e);
+                                  }}
+                                />
+                                <span className="custom-checkbox"></span>
+                              </label>
+                              <p className=" ml-4 text">{task.title}</p>
+                            </div>
 
-                <div className="py-4">{taskTypeHandler(1)}</div>
-              </div>
-            ))}
+                            <div className="py-4">{taskTypeHandler(1)}</div>
+                          </div>
+                        )}
+                      </Draggable>
+                    ))}
+                    {provided.placeholder}
+                  </div>
+                )}
+              </Droppable>
+            </DragDropContext>
           </div>
         </div>
       </div>
