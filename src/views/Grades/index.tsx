@@ -1,36 +1,16 @@
+import { useEffect, useState } from "react";
+import { fetchGrades } from "helpers/actions/tasks";
 import "./styles.scss";
 
 const Grades = () => {
-  let gradeList = [
-    {
-      course: "Vector analysis",
-      credit: "3",
-      dueDate: "24.04.20",
-      status: "Graded",
-      grade: "13",
-    },
-    {
-      course: "Vector analysis",
-      credit: "5",
-      dueDate: "24.04.20",
-      status: "Graded",
-      grade: "86",
-    },
-    {
-      course: "Vector analysis",
-      credit: "4",
-      dueDate: "14.03.20",
-      status: "Unopened",
-      grade: "",
-    },
-    {
-      course: "Vector analysis",
-      credit: "5",
-      dueDate: "25.04.20",
-      status: "Submitted",
-      grade: "54",
-    },
-  ];
+  const [grades, setGrades] = useState([]);
+  useEffect(() => {
+    fetchGrades().then((res) => {
+      console.log(res.grades);
+
+      setGrades(res.grades);
+    });
+  }, []);
 
   const yearOptions = [
     {
@@ -150,24 +130,25 @@ const Grades = () => {
           </div>
 
           <div className="flex flex-column mt-9">
-            {gradeList.map((grades, index) => (
-              <div
-                key={index}
-                className="flex flex-jc-sb border-bottom px-8 py-4"
-              >
-                <p className="text">{grades.course}</p>
-                <p className="text">{grades.credit}</p>
-                <p className="text">{grades.dueDate}</p>
-                <p className="text">{grades.status}</p>
-                <p
-                  className={`text grade text-white py-1 bg-${getColor(
-                    grades.grade
-                  )}`}
+            {grades.length > 0 &&
+              grades.map((grade: any, index) => (
+                <div
+                  key={index}
+                  className="flex flex-jc-sb border-bottom px-8 py-4"
                 >
-                  {grades.grade}/100
-                </p>
-              </div>
-            ))}
+                  <p className="text">{grade.course_name}</p>
+                  <p className="text">{grade.credit}</p>
+                  <p className="text">{"11/27"}</p>
+                  <p className="text">{grade.status}</p>
+                  <p
+                    className={`text grade text-white py-1 bg-${getColor(
+                      grade.grade
+                    )}`}
+                  >
+                    {grade.grade}/100
+                  </p>
+                </div>
+              ))}
           </div>
         </div>
       </div>

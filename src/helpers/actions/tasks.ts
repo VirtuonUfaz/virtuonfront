@@ -9,6 +9,15 @@ export const fetchTasks = () => {
     .catch((err) => err);
 };
 
+export const fetchGrades = () => {
+  return post("/grades", null, localStorage.getItem("token"))
+    .then((res: any) => {
+      if (res.data.status >= 400) return null;
+      return res.data;
+    })
+    .catch((err) => err);
+};
+
 export const createTask = (title, description, priority, deadline) => {
   return post(
     "/tasks/new",

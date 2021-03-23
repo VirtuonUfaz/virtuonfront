@@ -58,7 +58,7 @@ const Sidebar = () => {
             <p className="nav-text">Campus</p>
           </NavLink>
           <NavLink
-            to="/t"
+            to="/t1"
             activeClassName="active-link"
             className="flex-column full-center gap-1 py-3 w-100 cursor-pointer"
           >
@@ -66,7 +66,7 @@ const Sidebar = () => {
             <p className="nav-text">Resources</p>
           </NavLink>
           <NavLink
-            to="/t"
+            to="/t2"
             activeClassName="active-link"
             className="flex-column full-center gap-1 py-3 w-100 cursor-pointer"
           >
@@ -74,7 +74,7 @@ const Sidebar = () => {
             <p className="nav-text">Tasks</p>
           </NavLink>
           <NavLink
-            to="/t"
+            to="/t3"
             activeClassName="active-link"
             className="flex-column full-center gap-1 py-3 w-100 cursor-pointer"
           >
@@ -82,7 +82,7 @@ const Sidebar = () => {
             <p className="nav-text">Members</p>
           </NavLink>
           <NavLink
-            to="/t"
+            to="/t4"
             activeClassName="active-link"
             className="flex-column full-center gap-1 py-3 w-100 cursor-pointer"
           >
@@ -90,7 +90,7 @@ const Sidebar = () => {
             <p className="nav-text">Blog</p>
           </NavLink>
           <NavLink
-            to="/t"
+            to="/t5"
             activeClassName="active-link"
             className="flex-column full-center gap-1 py-3 w-100 cursor-pointer"
           >
@@ -98,7 +98,7 @@ const Sidebar = () => {
             <p className="nav-text">Logs</p>
           </NavLink>
           <NavLink
-            to="/t"
+            to="/t6"
             activeClassName="active-link"
             className="flex-column full-center gap-1 py-3 w-100 cursor-pointer"
           >

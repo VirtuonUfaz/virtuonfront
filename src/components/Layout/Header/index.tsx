@@ -33,7 +33,7 @@ const Header = () => {
     ":" +
     today.getMinutes();
 
-  const { setUser } = useContext(VirtuonContext);
+  const { user, setUser }: any = useContext(VirtuonContext);
   const logoutHandler = () => {
     return post("/auth/logout", null, "")
       .then((res) => console.log("res: ", res))
@@ -51,10 +51,10 @@ const Header = () => {
           <div className="text text-sm  pl-8">{date}</div>
           <div className="flex ">
             <div className="mr-4">
-              <p className="text bold pb-1 text-right">Cody Simmmons</p>
-              <p className="text text-xs text-gray">
-                Student affairs specialist
+              <p className="text bold pb-1 text-right">
+                {user?.first_name + " " + user?.last_name}
               </p>
+              <p className="text text-xs text-gray">Student</p>
             </div>
             <div className="image-wrapper">
               <img src="user.png" alt="" />

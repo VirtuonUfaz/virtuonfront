@@ -33,48 +33,50 @@ function App() {
       <div className="App">
         <React.Suspense fallback={<Loading />}>
           <VirtuonContext.Consumer>
-            {({ user }) => {
-              if (user) {
-                return (
-                  <>
+            {({ user, loading }) => {
+              if (!loading) {
+                if (user) {
+                  return (
+                    <>
+                      <Route>
+                        <Switch>
+                          <Layout>
+                            <Route exact path="/" component={RootRedirect} />
+                            <Route exact path="/Home" component={Home} />
+                            <Route
+                              exact
+                              path="/event/create"
+                              component={CreateEvent}
+                            />
+                            <Route exact path="/grades" component={Grades} />
+                            <Route exact path="/tasks" component={Tasks} />
+                            <Route exact path="/archive" component={Archive} />
+                            <Route
+                              exact
+                              path="/roomsInside"
+                              component={RoomsInside}
+                            />
+                            <Route exact path="/rooms" component={Rooms} />
+                            <Route
+                              exact
+                              path="/time-table"
+                              component={TimeTable}
+                            />
+                          </Layout>
+                        </Switch>
+                      </Route>
+                    </>
+                  );
+                } else
+                  return (
                     <Route>
                       <Switch>
-                        <Layout>
-                          <Route exact path="/" component={RootRedirect} />
-                          <Route exact path="/Home" component={Home} />
-                          <Route
-                            exact
-                            path="/event/create"
-                            component={CreateEvent}
-                          />
-                          <Route exact path="/grades" component={Grades} />
-                          <Route exact path="/tasks" component={Tasks} />
-                          <Route exact path="/archive" component={Archive} />
-                          <Route
-                            exact
-                            path="/roomsInside"
-                            component={RoomsInside}
-                          />
-                          <Route exact path="/rooms" component={Rooms} />
-                          <Route
-                            exact
-                            path="/time-table"
-                            component={TimeTable}
-                          />
-                        </Layout>
+                        <Route exact path="/login" component={Login} />
+                        <Route path="/" component={LoginRedirect} />
                       </Switch>
                     </Route>
-                  </>
-                );
-              } else;
-              return (
-                <Route>
-                  <Switch>
-                    <Route exact path="/login" component={Login} />
-                    <Route path="/" component={LoginRedirect} />
-                  </Switch>
-                </Route>
-              );
+                  );
+              }
             }}
           </VirtuonContext.Consumer>
         </React.Suspense>
