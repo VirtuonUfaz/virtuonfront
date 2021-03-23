@@ -17,7 +17,7 @@
       "mr": "margin-right"
     )
 {
-  @for $i from 1 through 10 {
+  @for $i from 1 through 14 {
     .#{$abbr}-#{$i} {
       #{$name}: 0.25rem * $i !important;
     }
