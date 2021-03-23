@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { fetchTasks, updateTask } from "helpers/actions/tasks";
+import { NavLink } from "react-router-dom";
 import Plus from "assets/Icons/plus.svg";
 import TaskModal from "./TaskModal";
 const Home = () => {
@@ -97,7 +98,9 @@ const Home = () => {
         <div className="border rounded flex-1 flex-as-s">
           <div className="flex flex-jc-sb mb-2 pt-8 px-8">
             <div className="sm-header">Tasks </div>
-            <div className="text text-blue">View all</div>
+            <NavLink to="/view-tasks" className="text text-blue cursor-pointer">
+              View all
+            </NavLink>
           </div>
           <div className="text text-sm text-gray px-8">Tasks</div>
           <div className="flex flex-column mt-9">

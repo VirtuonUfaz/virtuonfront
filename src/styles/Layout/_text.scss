@@ -19,6 +19,9 @@ body {
 .bold {
   font-weight: bold !important;
 }
+.fw-n {
+  font-weight: normal !important;
+}
 
 //Headers
 .sm-header {
@@ -33,9 +36,6 @@ body {
   font-size: 1.5rem; //24px
   line-height: 32px;
   color: #22345e;
-}
-
-.xl-header {
 }
 
 //Sizes
@@ -54,11 +54,11 @@ body {
   font-size: 1.5rem !important; //24px
 }
 
-.text-xl {
+.text-xxl {
   font-size: 2rem !important; //32px
 }
 
-.text-xxl {
+.text-xxxl {
   font-size: 2.5rem !important; //40px
 }
 
@@ -80,6 +80,9 @@ body {
   color: $dark-gray;
 }
 
+.text-blue-100 {
+  color: $light-blue;
+}
 .text-blue {
   color: $blue !important;
 }

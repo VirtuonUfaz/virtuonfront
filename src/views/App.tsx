@@ -14,6 +14,8 @@ const Tasks = lazy(() => import("./Tasks"));
 const Rooms = lazy(() => import("./Rooms"));
 const Grades = lazy(() => import("./Grades"));
 const TimeTable = lazy(() => import("./TimeTable"));
+const LessonTasks = lazy(() => import("./LessonTasks"));
+const TaskDetail = lazy(() => import("./TaskDetail"));
 const Archive = lazy(() => import("./Archive"));
 const RoomsInside = lazy(() => import("./RoomsInside"));
 const Login = lazy(() => import("./Login"));
@@ -49,7 +51,17 @@ function App() {
                               component={CreateEvent}
                             />
                             <Route exact path="/grades" component={Grades} />
-                            <Route exact path="/tasks" component={Tasks} />
+                            <Route
+                              exact
+                              path="/tasks"
+                              component={LessonTasks}
+                            />
+                            <Route
+                              exact
+                              path="/task/:id"
+                              component={TaskDetail}
+                            />
+                            <Route exact path="/view-tasks" component={Tasks} />
                             <Route exact path="/archive" component={Archive} />
                             <Route
                               exact

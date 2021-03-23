@@ -66,7 +66,7 @@ const Sidebar = () => {
             <p className="nav-text">Resources</p>
           </NavLink>
           <NavLink
-            to="/t2"
+            to="/tasks"
             activeClassName="active-link"
             className="flex-column full-center gap-1 py-3 w-100 cursor-pointer"
           >
