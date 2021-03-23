@@ -20,6 +20,8 @@ const Archive = lazy(() => import("./Archive"));
 const RoomsInside = lazy(() => import("./RoomsInside"));
 const Login = lazy(() => import("./Login"));
 const CreateEvent = lazy(() => import("./Event/CreateEvent"));
+const Documents = lazy(() => import("./Documents"));
+
 
 const RootRedirect = () => {
   return <Redirect to={`/home`} />;
@@ -51,6 +53,7 @@ function App() {
                               component={CreateEvent}
                             />
                             <Route exact path="/grades" component={Grades} />
+                            <Route exact path="/documents" component={Documents} />
                             <Route
                               exact
                               path="/tasks"
