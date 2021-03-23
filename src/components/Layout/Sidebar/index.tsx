@@ -7,7 +7,8 @@ import Tickets from "assets/Icons/tickets.svg";
 import Server from "assets/Icons/server.svg";
 import Blogs from "assets/Icons/blogs.svg";
 import Members from "assets/Icons/members.svg";
-
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faFile, faPoll } from "@fortawesome/free-solid-svg-icons";
 import { NavLink } from "react-router-dom";
 
 import "./styles.scss";
@@ -24,17 +25,6 @@ const Sidebar = () => {
             activeClassName="active-link"
             className=" flex-column full-center gap-1 py-3 w-100 cursor-pointer"
           >
-            <ul className="sub-menue">
-              <NavLink to="/rooms" className="p-4 bg-blue text-white text">
-                Rooms
-              </NavLink>
-              <NavLink to="/time-table" className="p-4 bg-blue text-white text">
-                Timetable
-              </NavLink>
-              <NavLink to="/archive" className="p-4 bg-blue text-white text">
-                Archive
-              </NavLink>
-            </ul>
             <img src={Home} alt="" />
             <p className="nav-text">Home</p>
           </NavLink>
@@ -43,27 +33,16 @@ const Sidebar = () => {
             activeClassName="active-link"
             className="flex-column full-center gap-1 py-3 w-100 cursor-pointer"
           >
-            <ul className="sub-menue">
-              <NavLink to="/absences" className="p-4 bg-blue text-white text">
-                Absence
-              </NavLink>
-              <NavLink to="/grades" className="p-4 bg-blue text-white text">
-                Grades
-              </NavLink>
-              <NavLink to="/documents" className="p-4 bg-blue text-white text">
-                Documents
-              </NavLink>
-            </ul>
             <img src={Campus} alt="" />
-            <p className="nav-text">Campus</p>
+            <p className="nav-text">Rooms</p>
           </NavLink>
           <NavLink
-            to="/t1"
+            to="/time-table"
             activeClassName="active-link"
             className="flex-column full-center gap-1 py-3 w-100 cursor-pointer"
           >
             <img src={Timetable} alt="" />
-            <p className="nav-text">Resources</p>
+            <p className="nav-text">Time Table</p>
           </NavLink>
           <NavLink
             to="/tasks"
@@ -74,12 +53,12 @@ const Sidebar = () => {
             <p className="nav-text">Tasks</p>
           </NavLink>
           <NavLink
-            to="/t3"
+            to="/grades"
             activeClassName="active-link"
             className="flex-column full-center gap-1 py-3 w-100 cursor-pointer"
           >
-            <img src={Members} alt="" />
-            <p className="nav-text">Members</p>
+            <FontAwesomeIcon icon={faPoll} color="white" />
+            <p className="nav-text">Grades</p>
           </NavLink>
           <NavLink
             to="/t4"
@@ -90,20 +69,20 @@ const Sidebar = () => {
             <p className="nav-text">Blog</p>
           </NavLink>
           <NavLink
-            to="/t5"
+            to="/archive"
             activeClassName="active-link"
             className="flex-column full-center gap-1 py-3 w-100 cursor-pointer"
           >
             <img src={Server} alt="" />
-            <p className="nav-text">Logs</p>
+            <p className="nav-text">Archive</p>
           </NavLink>
           <NavLink
-            to="/t6"
+            to="/documents"
             activeClassName="active-link"
             className="flex-column full-center gap-1 py-3 w-100 cursor-pointer"
           >
-            <img src={Tickets} alt="" />
-            <p className="nav-text">Tickets</p>
+            <FontAwesomeIcon icon={faFile} color="white" />
+            <p className="nav-text">Documents</p>
           </NavLink>
         </ul>
         <div className="flex-column full-center gap-1 py-3 w-100 cursor-pointer">
