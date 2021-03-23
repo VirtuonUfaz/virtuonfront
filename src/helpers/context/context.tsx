@@ -16,11 +16,7 @@ export const VirtuonProvider = (props) => {
   useEffect(() => {
     fetchUser()
       .then((user) => {
-        console.log(user);
-
-        if (user !== null && user) {
-          setUser(user);
-        }
+        if (user !== null && user) setUser(user);
       })
       .finally(() => {
         setLoading(false);

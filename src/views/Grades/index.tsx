@@ -6,8 +6,6 @@ const Grades = () => {
   const [grades, setGrades] = useState([]);
   useEffect(() => {
     fetchGrades().then((res) => {
-      console.log(res.grades);
-
       setGrades(res.grades);
     });
   }, []);

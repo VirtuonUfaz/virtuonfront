@@ -1,46 +1,41 @@
 .submit-button {
-    background-Color: #27AE60;
-    width: 8%;
-    height: 3rem;
-    color: #fff;
+  background-color: #27ae60;
+  width: 8%;
+  height: 3rem;
+  color: #fff;
 }
 
 .confirm-button {
-    width: 13%;
-    height: 3rem;
-    color: #fff;
+  width: 13%;
+  height: 3rem;
+  color: #fff;
 }
 
 .cancel-button {
-    background-Color: white;
-    width: 13%;
-    height: 3rem;
-    color: #BDBDBD;
-    border: 1px solid #BDBDBD;
+  background-color: white;
+  width: 13%;
+  height: 3rem;
+  color: #bdbdbd;
+  border: 1px solid #bdbdbd;
 }
-
-.italic {
-    font-style:italic;
-}
-
 
 .checkbox-label {
+  position: relative;
+  cursor: pointer;
+  .custom-checkbox {
     position: relative;
-    cursor: pointer;
-    .custom-checkbox {
-      position: relative;
-      border-radius: 50%;
-      display: inline-block;
-      width: 18px;
-      height: 18px;
-      border: 2px solid #c5c7cd;
-    }
-    input[type="radio"] {
-      display: none;
-      &:checked {
-        & + .custom-checkbox {
-          background: #22345e;
-        }
+    border-radius: 50%;
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    border: 2px solid #c5c7cd;
+  }
+  input[type="radio"] {
+    display: none;
+    &:checked {
+      & + .custom-checkbox {
+        background: #22345e;
       }
     }
   }
+}
