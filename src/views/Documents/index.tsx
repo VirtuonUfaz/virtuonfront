@@ -54,11 +54,11 @@ const Documents = (props) => {
                                 <input  
                                     type="radio" 
                                     name="docType" 
-                                    value="School Certificate" 
+                                    value="Tuition Certificate" 
                                     onChange={(e)=> setDocType(e.target.value)}/>
                                 <span className="custom-checkbox"></span>
                             </label>
-                            <p className=" ml-4 text">Tuition Certificate</p>
+                            <p className=" ml-4 text">School Certificate</p>
                         </div>
 
                         <div className="flex py-1">
