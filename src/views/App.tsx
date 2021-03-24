@@ -21,6 +21,9 @@ const RoomsInside = lazy(() => import("./RoomsInside"));
 const Login = lazy(() => import("./Login"));
 const CreateEvent = lazy(() => import("./Event/CreateEvent"));
 const Documents = lazy(() => import("./Documents"));
+const Blog = lazy(() => import("./Blog"));
+const BlogJournal = lazy(() => import("./BlogJournal"));
+const BlogProfile = lazy(() => import("./BlogProfile"));
 
 
 const RootRedirect = () => {
@@ -65,6 +68,9 @@ function App() {
                               component={TaskDetail}
                             />
                             <Route exact path="/view-tasks" component={Tasks} />
+                            <Route exact path="/blog" component={Blog} />
+                            <Route exact path="/blogJournal" component={BlogJournal} />
+                            <Route exact path="/blogProfile" component={BlogProfile} />
                             <Route exact path="/archive" component={Archive} />
                             <Route
                               exact
