@@ -25,7 +25,6 @@ const Blog = lazy(() => import("./Blog"));
 const BlogJournal = lazy(() => import("./BlogJournal"));
 const BlogProfile = lazy(() => import("./BlogProfile"));
 
-
 const RootRedirect = () => {
   return <Redirect to={`/home`} />;
 };
@@ -56,7 +55,11 @@ function App() {
                               component={CreateEvent}
                             />
                             <Route exact path="/grades" component={Grades} />
-                            <Route exact path="/documents" component={Documents} />
+                            <Route
+                              exact
+                              path="/documents"
+                              component={Documents}
+                            />
                             <Route
                               exact
                               path="/tasks"
@@ -69,8 +72,16 @@ function App() {
                             />
                             <Route exact path="/view-tasks" component={Tasks} />
                             <Route exact path="/blog" component={Blog} />
-                            <Route exact path="/blogJournal" component={BlogJournal} />
-                            <Route exact path="/blogProfile" component={BlogProfile} />
+                            <Route
+                              exact
+                              path="/blogJournal"
+                              component={BlogJournal}
+                            />
+                            <Route
+                              exact
+                              path="/blogProfile"
+                              component={BlogProfile}
+                            />
                             <Route exact path="/archive" component={Archive} />
                             <Route
                               exact
