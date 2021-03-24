@@ -1,27 +1,32 @@
 import { ReactComponent as DocumentIcon } from "assets/Icons/document.svg";
+import { fetchAssignmentsByID } from "helpers/actions/tasks";
+import { useEffect, useState } from "react";
+import { useParams } from "react-router";
+
 const TaskDetail = () => {
+  const { id }: any = useParams();
+  const [assignment, setAssignment]: any = useState({});
+  useEffect(() => {
+    fetchAssignmentsByID(id).then((res) => {
+      console.log(res);
+
+      setAssignment(res.assignment);
+    });
+  }, []);
   return (
     <div className="py-10">
       <div className="flex gap-8">
         <div className="flex-4">
           <div className="flex flex-ai-c gap-5 mb-4">
             <DocumentIcon />
-            <h1 className="text text-xl text-blue ">
-              Summary of your progress for the week ending 12.04.2020
-            </h1>
+            <h1 className="text text-xl text-blue ">{assignment?.name}</h1>
           </div>
           <div className="py-8 border-bottom">
             <p className="text text-gray mb-2">Nigar Yusifzada</p>
             <p className="text text-black bold mb-1">May 26, 2019</p>
             <p className="text text-xs text-gray">6:30 PM</p>
           </div>
-          <p className="text py-8">
-            The aim of the experiment is to find out the concentration of the
-            given analyte by titrating it with an analyte which has a known
-            concentration and to detect the equivalence point with the help of
-            the the pH-meter, at which the moles of base are equal to the moles
-            of acid.
-          </p>
+          <p className="text py-8">{assignment?.description}</p>
         </div>
         <div className="flex-1">
           <div className="border rounded">

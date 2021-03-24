@@ -18,6 +18,24 @@ export const fetchGrades = () => {
     .catch((err) => err);
 };
 
+export const fetchAssignments = () => {
+  return get("/assignments", null, localStorage.getItem("token"))
+    .then((res: any) => {
+      if (res.data.status >= 400) return null;
+      return res.data;
+    })
+    .catch((err) => err);
+};
+
+export const fetchAssignmentsByID = (id) => {
+  return get("/assignments/" + id, null, localStorage.getItem("token"))
+    .then((res: any) => {
+      if (res.data.status >= 400) return null;
+      return res.data;
+    })
+    .catch((err) => err);
+};
+
 export const createTask = (title, description, priority, deadline) => {
   return post(
     "/tasks/new",

@@ -24,23 +24,23 @@ const Home = () => {
   };
 
   const taskTypeHandler = (key) => {
-    switch (key) {
-      case 0:
-        return (
-          <div className="rounded py-1 px-3 bg-light-gray text-white text-sm ">
-            Default
-          </div>
-        );
-      case 1:
+    switch (key.toLowerCase()) {
+      case "new":
         return (
           <div className="rounded py-1 px-3 bg-green text-white text-sm ">
             New
           </div>
         );
-      case 2:
+      case "urgent":
         return (
           <div className="rounded py-1 px-3 bg-red text-white text-sm ">
             Urgent
+          </div>
+        );
+      default:
+        return (
+          <div className="rounded py-1 px-3 bg-light-gray text-white text-sm  ">
+            {key}
           </div>
         );
     }
@@ -89,10 +89,8 @@ const Home = () => {
       <h1 className="md-header">Home</h1>
       <div className="flex gap-7 my-8">
         <div className="border flex-1  rounded py-6 px-8 text-center">
-          <p className="text bold text-md text-gray mb-5">Hours on lectures</p>
-          <p className="text bold text-blue text-xxl text-secondary-font">
-            120
-          </p>
+          <p className="text bold text-md text-gray mb-5">Deadlines</p>
+          <p className="text bold text-blue text-xxl text-secondary-font">3</p>
         </div>
         <div className="border flex-1  rounded py-6 px-8 text-center">
           <p className="text bold text-md text-gray mb-5">Lectures left</p>
@@ -187,7 +185,9 @@ const Home = () => {
                               <p className=" ml-4 text">{task.title}</p>
                             </div>
 
-                            <div className="py-4">{taskTypeHandler(1)}</div>
+                            <div className="py-4">
+                              {taskTypeHandler(task.priority)}
+                            </div>
                           </div>
                         )}
                       </Draggable>

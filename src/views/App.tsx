@@ -14,8 +14,8 @@ const Tasks = lazy(() => import("./Tasks"));
 const Rooms = lazy(() => import("./Rooms"));
 const Grades = lazy(() => import("./Grades"));
 const TimeTable = lazy(() => import("./TimeTable"));
-const LessonTasks = lazy(() => import("./LessonTasks"));
-const TaskDetail = lazy(() => import("./TaskDetail"));
+const Assignments = lazy(() => import("./Assignments"));
+const AssignmentDetail = lazy(() => import("./AssignmentDetail"));
 const Archive = lazy(() => import("./Archive"));
 const RoomsInside = lazy(() => import("./RoomsInside"));
 const Login = lazy(() => import("./Login"));
@@ -62,13 +62,13 @@ function App() {
                             />
                             <Route
                               exact
-                              path="/tasks"
-                              component={LessonTasks}
+                              path="/assignments"
+                              component={Assignments}
                             />
                             <Route
                               exact
-                              path="/task/:id"
-                              component={TaskDetail}
+                              path="/assignment/:id"
+                              component={AssignmentDetail}
                             />
                             <Route exact path="/view-tasks" component={Tasks} />
                             <Route exact path="/blog" component={Blog} />

@@ -4,12 +4,12 @@ import { createTask } from "helpers/actions/tasks";
 
 const TaskModal = ({ show, setShow, tasks, setTasks }) => {
   const [taskName, setTaskName] = useState("");
-  const [taskType, setTaskType] = useState("0");
+  const [priority, setPriority] = useState("");
 
   const addTaskHandler = () => {
-    createTask(taskName, null, "normal", null).then((data) => {
+    createTask(taskName, null, priority, null).then((data) => {
       if (data !== null) {
-        setTasks([{ title: taskName, type: parseInt(taskType) }, ...tasks]);
+        setTasks([{ title: taskName, priority }, ...tasks]);
         setShow(false);
       }
     });
@@ -39,17 +39,13 @@ const TaskModal = ({ show, setShow, tasks, setTasks }) => {
               Type
             </label>
 
-            <select
+            <input
               className="form-input form-w-100"
-              value={taskType}
+              value={priority}
               onChange={(e) => {
-                setTaskType(e.target.value);
+                setPriority(e.target.value);
               }}
-            >
-              <option value="0">Default</option>
-              <option value="1">New</option>
-              <option value="2">Urgent</option>
-            </select>
+            ></input>
           </div>
         </div>
         <button

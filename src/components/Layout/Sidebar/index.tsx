@@ -45,12 +45,12 @@ const Sidebar = () => {
             <p className="nav-text">Time Table</p>
           </NavLink>
           <NavLink
-            to="/tasks"
+            to="/assignments"
             activeClassName="active-link"
             className="flex-column full-center gap-1 py-3 w-100 cursor-pointer"
           >
             <img src={Server} alt="" />
-            <p className="nav-text">Tasks</p>
+            <p className="nav-text">Assignments</p>
           </NavLink>
           <NavLink
             to="/grades"

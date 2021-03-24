@@ -24,23 +24,23 @@ const Tasks = () => {
   };
 
   const taskTypeHandler = (key) => {
-    switch (key) {
-      case 0:
-        return (
-          <div className="rounded py-1 px-3 bg-light-gray text-white text-sm ">
-            Default
-          </div>
-        );
-      case 1:
+    switch (key.toLowerCase()) {
+      case "new":
         return (
           <div className="rounded py-1 px-3 bg-green text-white text-sm ">
             New
           </div>
         );
-      case 2:
+      case "urgent":
         return (
           <div className="rounded py-1 px-3 bg-red text-white text-sm ">
             Urgent
+          </div>
+        );
+      default:
+        return (
+          <div className="rounded py-1 px-3 bg-light-gray text-white text-sm  ">
+            {key}
           </div>
         );
     }
@@ -78,7 +78,11 @@ const Tasks = () => {
               // style={getListStyle(snapshot.isDraggingOver)}
             >
               {tasks.map((task: any, index: number) => (
-                <Draggable key={task.id} draggableId={task.id.toString()} index={index}>
+                <Draggable
+                  key={task.id}
+                  draggableId={task.id.toString()}
+                  index={index}
+                >
                   {(provided, snapshot) => (
                     <div
                       className="w-50 px-5 py-2 border rounded my-4 "
@@ -98,7 +102,9 @@ const Tasks = () => {
                           <span className="custom-checkbox"></span>
                         </label>
                         <p className="text">{task.title}</p>
-                        <div className="py-4">{taskTypeHandler(1)}</div>
+                        <div className="py-4">
+                          {taskTypeHandler(task.priority)}
+                        </div>
                         <div
                           className="text text-md text-red cursor-pointer"
                           onClick={() => {
