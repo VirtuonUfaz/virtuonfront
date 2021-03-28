@@ -30,10 +30,9 @@ const Login = () => {
       .then((res: any) => {
         if (res.data.status === 200) setStep("OTP");
       })
-      .catch((err) => console.log("err: ", err));
+      .catch((err) => console.error("err: ", err));
   };
   const onSubmitOTP = (data) => {
-    console.log(data);
 
     post("/auth/login", { ID: ID, OTP: OTP }, "")
       .then((res: any) => {
@@ -46,7 +45,7 @@ const Login = () => {
             });
         }
       })
-      .catch((err) => console.log("err: ", err));
+      .catch((err) => console.error("err: ", err));
   };
 
   return (

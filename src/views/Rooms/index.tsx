@@ -147,9 +147,6 @@ const rooms = withRouter(({ history }) => {
   ];
 
   const [room, setRooms] = useState(cardList);
-  //   useEffect(() => {
-  //   fetchRooms().then((rooms) => setRooms(rooms));
-  // }, []);
 
   return (
     <div className="py-10">

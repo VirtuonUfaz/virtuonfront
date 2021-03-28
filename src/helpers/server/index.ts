@@ -18,7 +18,7 @@ export const get = (endpoint, data, token) => {
       if (res) return Promise.resolve(res);
       else Promise.reject(errors.Errors.ERR_DATA_NOT_FETCHED);
     })
-    .catch((e) => console.log(e));
+    .catch((e) => console.error(e));
 };
 
 export const post = (endpoint, data, token) => {
@@ -37,5 +37,5 @@ export const post = (endpoint, data, token) => {
       if (res) return Promise.resolve(res);
       else Promise.reject(errors.Errors.ERR_DATA_NOT_POSTED);
     })
-    .catch((e) => console.log(e));
+    .catch((e) => console.error(e));
 };

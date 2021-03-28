@@ -36,12 +36,11 @@ const Header = () => {
   const { user, setUser }: any = useContext(VirtuonContext);
   const logoutHandler = () => {
     return post("/auth/logout", null, "")
-      .then((res) => console.log("res: ", res))
       .then(() => {
         setUser(null);
         localStorage.removeItem("token");
       })
-      .catch((err) => console.log("err: ", err));
+      .catch((err) => console.error("err: ", err));
   };
 
   return (

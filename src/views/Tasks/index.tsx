@@ -75,7 +75,6 @@ const Tasks = () => {
               className="flex flex-column flex-ai-c"
               {...provided.droppableProps}
               ref={provided.innerRef}
-              // style={getListStyle(snapshot.isDraggingOver)}
             >
               {tasks.map((task: any, index: number) => (
                 <Draggable

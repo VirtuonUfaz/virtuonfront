@@ -82,7 +82,7 @@ const CreateEvent = () => {
     return (
         <div className="py-10">
             <h1 className="title">Create Event</h1>
-            <form onSubmit={handleSubmit(d => console.log(d))}>
+            <form onSubmit={handleSubmit(d => {})}>
                 <Row>
                     <Col md={6} lg={6} className="mb-4">
                         <label className="form-label">Event</label>

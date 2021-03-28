@@ -8,8 +8,6 @@ const TaskDetail = () => {
   const [assignment, setAssignment]: any = useState({});
   useEffect(() => {
     fetchAssignmentsByID(id).then((res) => {
-      console.log(res);
-
       setAssignment(res.assignment);
     });
   }, []);
